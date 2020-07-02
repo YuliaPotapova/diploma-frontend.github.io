@@ -1,0 +1,6 @@
+.search__button {
+  justify-self: flex-end;
+  right: 0;
+  padding: 0 54px 0 53px;
+  position: absolute;
+}

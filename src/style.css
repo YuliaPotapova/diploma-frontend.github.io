@@ -1,0 +1,12 @@
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts.css);
+@import url(./blocks/main-page/main-page.css);
+@import url(./blocks/main-block/main-block.css);
+@import url(./blocks/header/header.css);
+@import url(./blocks/search/search.css);
+@import url(./blocks/logo/logo.css);
+@import url(./blocks/button/button.css);
+
+body {
+  background-color: white;
+}

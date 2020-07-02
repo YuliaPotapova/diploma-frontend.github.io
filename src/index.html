@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NewsExplorer</title>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles/vendor/normalize.css">
+  <!-- <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>"> -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main-page">
+
+    <div class="main-block">
+
+      <header class="header">
+        <div class="header__content">
+          <span class="logo">NewsExplorer</span>
+          <nav class="header__nav">
+            <a class="header__main" href="URL">Главная</a>
+            <button class="button header__button-auth">Авторизоваться</button>
+          </nav>
+        </div>
+      </header>
+
+      <section class="search">
+        <div class="search__content">
+          <h1 class="search__title">Что в мире творится?</h1>
+          <p class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
+          <div class="search__input-with-button">
+            <input type="text" class="search__input" placeholder="Введите тему новости">
+            <button class="button search__button">Искать</button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+
+
+    <section class="about-author">
+      <!-- <img src="<%=require('./images/logo.svg').default%>" alt="mesto logo" class="logo"> -->
+    </section>
+
+  </div>
+  <script type="module" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+</body>
+</html>

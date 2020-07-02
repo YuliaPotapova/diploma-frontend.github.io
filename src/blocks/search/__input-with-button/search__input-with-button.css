@@ -1,0 +1,6 @@
+.search__input-with-button {
+  width: 100%;
+  display: flex;
+  margin-bottom: 80px;
+  position: relative;
+}
