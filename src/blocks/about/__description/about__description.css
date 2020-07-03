@@ -1,0 +1,8 @@
+.about__description {
+  max-width: 42%;
+  margin-top: 131px;
+  margin-left: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}

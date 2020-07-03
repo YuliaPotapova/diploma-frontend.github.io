@@ -7,7 +7,7 @@
   display: block;
   cursor: pointer;
   box-sizing: border-box;
-  font-family: "Roboto", Arial, sans-serif;;
+  font-family: "Roboto", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -15,10 +15,6 @@
 }
 
 .button:focus {
-  outline-color: greenyellow;
-}
-
-.button:hover {
-  background-color: white;
-  color: black;
+  background: #2a65cc;
+  border: 1px solid #2a65cc;
 }

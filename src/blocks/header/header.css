@@ -2,15 +2,14 @@
 @import url(./__nav/header__nav.css);
 @import url(./__main/header__main.css);
 @import url(./__button-auth/header__button-auth.css);
+@import url(./__button-log-out/header__button-log-out.css);
+@import url(./__button-log-out-icon/header__button-log-out-icon.css);
+@import url(./__articles/header__articles.css);
 
 .header {
-  /* max-width: 1440px; */
   width: 100%;
-  /* min-height: 132px; */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* position: absolute; */
-  /* top: 0; */
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }

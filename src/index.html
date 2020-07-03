@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NewsExplorer</title>
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"> -->
+  <link rel="icon" href="<%=require('./images/favicon.ico').default%>">
   <link rel="stylesheet" href="styles/vendor/normalize.css">
   <!-- <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>"> -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="theme-gray">
   <div class="main-page">
 
     <div class="main-block">
@@ -17,9 +18,15 @@
       <header class="header">
         <div class="header__content">
           <span class="logo">NewsExplorer</span>
+          <!-- <img src="<%=require('./images/logo.svg').default%>" alt="mesto logo" class="logo"> -->
           <nav class="header__nav">
             <a class="header__main" href="URL">Главная</a>
-            <button class="button header__button-auth">Авторизоваться</button>
+            <a class="header__articles" href="URL">Сохранённые статьи</a>
+            <!-- <button class="button header__button-auth">Авторизоваться</button> -->
+            <button class="button header__button-log-out">
+              Грета
+              <img class="header__button-log-out-icon" src="images/log-out-icon.svg" alt="">
+            </button>
           </nav>
         </div>
       </header>
@@ -37,10 +44,37 @@
 
     </div>
 
+    <section class="main-results">
 
+    </section>
 
-    <section class="about-author">
-      <!-- <img src="<%=require('./images/logo.svg').default%>" alt="mesto logo" class="logo"> -->
+    <section class="about">
+      <img class="about__avatar" src="images/avatar_.jpg" alt="фото автора">
+      <div class="about__description">
+        <h2 class="title">Об авторе</h2>
+        <p class="about__text">
+          Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь,
+          какими технологиями разработки владеете.<br><br>
+          Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь
+          потенциальным заказчикам.
+        </p>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class="footer__content">
+        <span class="footer__text">© 2020 Supersite, Powered by News API</span>
+        <nav class="footer__links">
+          <a class="footer__link" href="URL">Главная</a>
+          <a class="footer__link" href="https://praktikum.yandex.ru/">Яндекс.Практикум</a>
+        </nav>
+        <a class="footer__icon" href="https://github.com/">
+          <img src="images/github-icon.svg" alt="ссылка на github">
+        </a>
+        <a class="footer__icon" href="https://www.facebook.com/yandex.praktikum/">
+          <img src="images/facebook-icon.svg" alt="ссылка на facebook">
+        </a>
+      </div>
     </section>
 
   </div>
