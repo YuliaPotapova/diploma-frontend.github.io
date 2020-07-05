@@ -1,0 +1,13 @@
+@import url(../../title/title.css);
+@import url(../../button/button.css);
+@import url(../_button/main-results_button.css);
+@import url(../../articles-list/articles-list.css);
+@import url(../../article/article.css);
+
+.main-results__content {
+  width: 86%;
+  display: flex;
+  /* display: none; */
+  flex-direction: column;
+  align-items: flex-start;
+}

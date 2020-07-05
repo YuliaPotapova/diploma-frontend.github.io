@@ -1,0 +1,9 @@
+@import url(../__circle-preloader/main-results__circle-preloader.css);
+@import url(../__info-message/main-results__info-message.css);
+
+.main-results__loading {
+  /* display: flex; */
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}

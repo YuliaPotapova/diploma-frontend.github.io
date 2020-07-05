@@ -1,0 +1,11 @@
+@import url(./__content/main-results__content.css);
+@import url(./__loading/main-results__loading.css);
+@import url(./__not-found/main-results__not-found.css);
+
+.main-results {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #F5F6F7;
+  padding: 80px 0;
+}

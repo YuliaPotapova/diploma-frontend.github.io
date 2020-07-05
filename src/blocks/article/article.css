@@ -1,0 +1,15 @@
+@import url(./__image/article__image.css);
+@import url(./__date/article__date.css);
+@import url(./__title/article__title.css);
+@import url(./__text/article__text.css);
+@import url(./__source/article__source.css);
+@import url(./__bookmark-icon/article__bookmark-icon.css);
+@import url(./__bookmark-icon/_normal/article__bookmark-icon_normal.css);
+@import url(./__bookmark-icon/_marked/article__bookmark-icon_marked.css);
+
+.article {
+  background-color: white;
+  border-radius: 16px;
+  height: 576px;
+  position: relative;
+}

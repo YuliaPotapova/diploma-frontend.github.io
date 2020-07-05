@@ -1,0 +1,10 @@
+.main-results_button {
+  width: 288px;
+  height: 64px;
+  background: white;
+  border: 1px solid white;
+  border-radius: 64px;
+  color: #1a1b22;
+  align-self: center;
+  display: block;
+}

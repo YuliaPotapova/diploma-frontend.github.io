@@ -10,5 +10,11 @@
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
+  outline-color: transparent;
   /* color: #b6bcbf; */
 }
+
+.search__input::-webkit-input-placeholder {color:#b6bcbf; opacity:1;}
+.search__input::-moz-placeholder          {color:#b6bcbf; opacity:1;}
+.search__input:-moz-placeholder           {color:#b6bcbf; opacity:1;}
+.search__input:-ms-input-placeholder      {color:#b6bcbf; opacity:1;}

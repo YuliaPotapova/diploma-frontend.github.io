@@ -1,8 +1,8 @@
-.header__button-auth {
+.button_theme-clear {
   height: 48px;
   background: transparent;
   border: 1px solid white;
+  border-radius: 48px;
   color: white;
   margin: 19px 0 13px;
-  padding: 0 12px;
 }

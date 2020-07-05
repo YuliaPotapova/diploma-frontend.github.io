@@ -22,8 +22,8 @@
           <nav class="header__nav">
             <a class="header__main" href="URL">Главная</a>
             <a class="header__articles" href="URL">Сохранённые статьи</a>
-            <!-- <button class="button header__button-auth">Авторизоваться</button> -->
-            <button class="button header__button-log-out">
+            <!-- <button class="button button_theme-clear header_button-auth">Авторизоваться</button> -->
+            <button class="button button_theme-clear header_button-log-out">
               Грета
               <img class="header__button-log-out-icon" src="images/log-out-icon.svg" alt="">
             </button>
@@ -37,7 +37,7 @@
           <p class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
           <div class="search__input-with-button">
             <input type="text" class="search__input" placeholder="Введите тему новости">
-            <button class="button search__button">Искать</button>
+            <button class="button search__button button_theme-blue">Искать</button>
           </div>
         </div>
       </section>
@@ -45,6 +45,69 @@
     </div>
 
     <section class="main-results">
+      <!--------------------------- Блок результатов с найденными статьями ------------------------>
+      <div class="main-results__content">
+        <h2 class="title">Результаты поиска</h2>
+        <div class="articles-list">
+          <!----------------- Карточка статьи ---------------->
+          <div class="article">
+            <div class="article__image" style="background-image: url(images/image_08.jpg)">
+              <button class="article__bookmark-icon article__bookmark-icon_normal"></button>
+            </div>
+            <span class="article__date">2 августа, 2019</span>
+            <h3 class="article__title">Национальное достояние – парки</h4>
+            <p class="article__text">
+              В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться
+              система национальных парков – охраняемых территорий, где и сегодня каждый может
+              приобщиться к природе.
+            </p>
+            <span class="article__source">Лента.ру</span>
+          </div>
+          <!-------------------------------------------------->
+          <!----------------- Карточка статьи ---------------->
+          <div class="article">
+            <div class="article__image" style="background-image: url(images/image_04.jpg)">
+              <button class="article__bookmark-icon article__bookmark-icon_marked"></button>
+            </div>
+            <span class="article__date">2 августа, 2019</span>
+            <h3 class="article__title">Лесные огоньки: история одной фотографии</h4>
+            <p class="article__text">
+              Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы
+              запечатлеть ускользающую красоту одного из местных чудес природы.
+            </p>
+            <span class="article__source">Медуза</span>
+          </div>
+          <!-------------------------------------------------->
+          <!---------------- Карточка статьи ----------------->
+          <div class="article">
+            <div class="article__image" style="background-image: url(images/image_07.jpg)">
+              <button class="article__bookmark-icon article__bookmark-icon_normal"></button>
+            </div>
+            <span class="article__date">2 августа, 2019</span>
+            <h3 class="article__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h4>
+            <p class="article__text">
+              Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости
+              их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...
+            </p>
+            <span class="article__source">Риа</span>
+          </div>
+          <!-------------------------------------------------->
+        </div>
+        <button class="button main-results_button">Показать еще</button>
+      </div>
+
+      <!------------------------------ Блок результатов в процессе поиска> --------------------------->
+      <div class="main-results__loading">
+        <i class="main-results__circle-preloader"></i>
+        <p class="main-results__info-message">Идет поиск новостей...</p>
+      </div>
+
+      <!------------------------------ Блок результатов, когда ничего не найдено> --------------------------->
+      <div class="main-results__not-found">
+        <img class="main-results__not-found-image" src="images/not-found_v1.svg" alt="изоражение печальной лупы"></img>
+        <h3 class="main-results__not-found-title">Ничего не найдено</h3>
+        <p class="main-results__info-message">К сожалению, по вашему запросу<br>ничего не найдено.</p>
+      </div>
 
     </section>
 

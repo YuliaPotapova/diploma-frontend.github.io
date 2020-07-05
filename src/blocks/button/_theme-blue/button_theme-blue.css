@@ -1,0 +1,7 @@
+.button_theme-blue {
+  height: 64px;
+  background: #2f71e5;
+  border: 1px solid #2f71e5;
+  border-radius: 64px;
+  color: white;
+}

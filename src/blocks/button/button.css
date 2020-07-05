@@ -1,10 +1,8 @@
+@import url(./_theme-blue/button_theme-blue.css);
+@import url(./_theme-clear/button_theme-clear.css);
+
 .button {
-  height: 64px;
-  background: #2f71e5;
-  border: 1px solid #2f71e5;
-  border-radius: 64px;
-  color: white;
-  display: block;
+  /* display: block; */
   cursor: pointer;
   box-sizing: border-box;
   font-family: "Roboto", Arial, sans-serif;
@@ -12,6 +10,7 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
+  outline-color: transparent;
 }
 
 .button:focus {
