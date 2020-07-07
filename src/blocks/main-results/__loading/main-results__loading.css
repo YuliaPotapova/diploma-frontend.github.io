@@ -2,8 +2,7 @@
 @import url(../__info-message/main-results__info-message.css);
 
 .main-results__loading {
-  /* display: flex; */
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }

@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NewsExplorer</title>
-  <!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"> -->
-  <link rel="icon" href="<%=require('./images/favicon.ico').default%>">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <!-- <link rel="icon" href="<%=require('./images/favicon.ico').default%>"> -->
   <link rel="stylesheet" href="styles/vendor/normalize.css">
   <!-- <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>"> -->
   <link rel="stylesheet" href="style.css">
@@ -22,7 +22,7 @@
           <nav class="header__nav">
             <a class="header__main" href="URL">Главная</a>
             <a class="header__articles" href="URL">Сохранённые статьи</a>
-            <!-- <button class="button button_theme-clear header_button-auth">Авторизоваться</button> -->
+            <button class="button button_theme-clear header_button-auth is-closed">Авторизоваться</button>
             <button class="button button_theme-clear header_button-log-out">
               Грета
               <img class="header__button-log-out-icon" src="images/log-out-icon.svg" alt="">
@@ -97,13 +97,13 @@
       </div>
 
       <!------------------------------ Блок результатов в процессе поиска> --------------------------->
-      <div class="main-results__loading">
+      <div class="main-results__loading is-closed">
         <i class="main-results__circle-preloader"></i>
         <p class="main-results__info-message">Идет поиск новостей...</p>
       </div>
 
       <!------------------------------ Блок результатов, когда ничего не найдено> --------------------------->
-      <div class="main-results__not-found">
+      <div class="main-results__not-found is-closed">
         <img class="main-results__not-found-image" src="images/not-found_v1.svg" alt="изоражение печальной лупы"></img>
         <h3 class="main-results__not-found-title">Ничего не найдено</h3>
         <p class="main-results__info-message">К сожалению, по вашему запросу<br>ничего не найдено.</p>
@@ -139,6 +139,70 @@
         </a>
       </div>
     </section>
+
+    <div id="popup-entry" class="popup is-closed">
+      <div class="popup__content">
+        <img class="popup__close" src="./images/close.svg" alt="закрыть">
+        <h3 class="popup__title">Вход</h3>
+        <form class="popup__form" name="entry">
+
+          <span class="popup__inputs-name">Email</span>
+          <input type="text" name="email" class="popup__input" placeholder="Введите почту">
+          <p id="error-email" class="error-message is-invisible">Неправильный формат email</p>
+
+          <span class="popup__inputs-name">Пароль</span>
+          <input type="password" name="password" class="popup__input" placeholder="Введите пароль">
+          <p id="error-email" class="error-message is-invisible">Пароль обязателен</p>
+
+          <button name="submit" class="button popup__button button_not-active">Войти</button>
+          <button name="submit" class="button popup__button button_theme-blue is-closed">Войти</button>
+
+        </form>
+        <span class="popup__alternative">
+          или
+          <a class="popup__link" href="#">Зарегистрироваться</a>
+        </span>
+      </div>
+    </div>
+
+    <div id="popup-registration" class="popup is-closed">
+      <div class="popup__content">
+        <img class="popup__close" src="./images/close.svg" alt="закрыть">
+        <h3 class="popup__title">Регистрация</h3>
+        <form class="popup__form" name="registration">
+
+          <span class="popup__inputs-name">Email</span>
+          <input type="text" name="email" class="popup__input" placeholder="Введите почту">
+          <p id="error-email" class="error-message is-invisible">Неправильный формат email</p>
+
+          <span class="popup__inputs-name">Пароль</span>
+          <input type="password" name="password" class="popup__input" placeholder="Введите пароль">
+          <p id="error-password" class="error-message is-invisible">это на всякий случай</p>
+
+          <span class="popup__inputs-name">Имя</span>
+          <input type="text" name="name" class="popup__input" placeholder="Введите своё имя">
+          <p id="error-name" class="error-message is-invisible">и это наверняка пригодится</p>
+
+          <p id="error-user" class="error-message popup_error-already-exist is-invisible">Такой пользователь уже есть</p>
+
+          <button name="submit" class="button popup__button button_not-active">Зарегистрироваться</button>
+          <button name="submit" class="button popup__button button_theme-blue is-closed">Зарегистрироваться</button>
+
+        </form>
+        <span class="popup__alternative">
+          или
+          <a class="popup__link" href="#">Войти</a>
+        </span>
+      </div>
+    </div>
+
+    <div id="popup-success" class="popup">
+      <div class="popup__content popup__content_success">
+        <img class="popup__close" src="./images/close.svg" alt="закрыть">
+        <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
+        <a class="popup__link popup__link_success" href="#">Выполнить вход</a>
+      </div>
+    </div>
 
   </div>
   <script type="module" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>

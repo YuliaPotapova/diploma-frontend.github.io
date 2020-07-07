@@ -1,0 +1,7 @@
+.button_not-active {
+  height: 64px;
+  background: #e6e8eb;
+  border: 1px solid #e6e8eb;
+  border-radius: 64px;
+  color: #b6bcbf;
+}
