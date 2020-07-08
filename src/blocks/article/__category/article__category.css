@@ -1,0 +1,15 @@
+.article__category {
+  background-color: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+
+  font-family: "Roboto", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: black;
+}

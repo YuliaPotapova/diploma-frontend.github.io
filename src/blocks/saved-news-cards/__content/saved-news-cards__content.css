@@ -1,0 +1,7 @@
+.saved-news-cards__content {
+  width: 86%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: -2px 0;
+}

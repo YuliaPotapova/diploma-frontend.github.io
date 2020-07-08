@@ -4,7 +4,6 @@
   "description": "Дипломный проект. Этап 3. Инфраструктура и вёрстка",
   "main": "src/index.js",
   "scripts": {
-    "start": "rimraf dist && webpack --mode production",
     "build": "rimraf dist && webpack --mode production",
     "dev": "webpack-dev-server --mode development --open --watch",
     "deploy": "gh-pages -d dist"

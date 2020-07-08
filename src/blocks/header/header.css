@@ -2,7 +2,6 @@
 @import url(./__nav/header__nav.css);
 @import url(./__main/header__main.css);
 @import url(../button/button.css);
-@import url(./_button-auth/header_button-auth.css);
 @import url(./_button-log-out/header_button-log-out.css);
 @import url(./__button-log-out-icon/header__button-log-out-icon.css);
 @import url(./__articles/header__articles.css);
@@ -13,4 +12,10 @@
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  font-family: "Roboto", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
 }

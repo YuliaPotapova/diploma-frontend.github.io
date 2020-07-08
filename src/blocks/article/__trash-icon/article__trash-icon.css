@@ -1,0 +1,39 @@
+.article__trash-icon {
+  background: url(../../../images/trash-icon_gray.svg) center no-repeat;
+  background-color: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+  display: block;
+}
+
+.article__trash-icon::before {
+  width: 159px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 13px 0;
+  text-align: center;
+  position: relative;
+  top: -1px;
+  right: 170px;
+  content: "Убрать из сохранённых";
+  font-family: "Roboto", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: black;
+  display: none;
+}
+
+.article__trash-icon:hover {
+  background: url(../../../images/trash-icon_black.svg) center no-repeat;
+}
+
+.article__trash-icon:hover::before {
+  display: block;
+}

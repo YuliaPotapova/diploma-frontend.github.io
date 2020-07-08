@@ -1,17 +1,22 @@
 @import url(./vendor/normalize.css);
 @import url(./vendor/fonts.css);
-@import url(./blocks/main-page/main-page.css);
+@import url(./blocks/page/page.css);
 @import url(./blocks/title/title.css);
 @import url(./blocks/main-block/main-block.css);
 @import url(./blocks/header/header.css);
 @import url(./blocks/search/search.css);
 @import url(./blocks/logo/logo.css);
 @import url(./blocks/main-results/main-results.css);
+@import url(./blocks/articles-list/articles-list.css);
+@import url(./blocks/article/article.css);
 @import url(./blocks/about/about.css);
 @import url(./blocks/footer/footer.css);
 @import url(./blocks/popup/popup.css);
 @import url(./blocks/is-closed/is-closed.css);
 @import url(./blocks/is-invisible/is-invisible.css);
+
+@import url(./blocks/header/_button-auth/header_button-auth.css);
+@import url(./blocks/header/_item-is-active/header_item-is-active.css);
 
 body {
   background-color: #e5e5e5;

@@ -1,0 +1,8 @@
+.button_theme-dark {
+  height: 48px;
+  background: transparent;
+  border: 1px solid #1a1b22;
+  border-radius: 48px;
+  color: #1a1b22;
+  margin: 19px 0 13px;
+}

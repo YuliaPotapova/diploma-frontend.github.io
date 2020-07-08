@@ -1,0 +1,8 @@
+.saved-news {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  color: #1a1b22;
+  padding: 62px 0;
+}
