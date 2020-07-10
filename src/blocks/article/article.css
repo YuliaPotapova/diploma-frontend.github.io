@@ -3,13 +3,20 @@
 @import url(./__title/article__title.css);
 @import url(./__text/article__text.css);
 @import url(./__source/article__source.css);
-@import url(./__bookmark-icon/article__bookmark-icon.css);
-@import url(./__bookmark-icon/_normal/article__bookmark-icon_normal.css);
-@import url(./__bookmark-icon/_marked/article__bookmark-icon_marked.css);
 
 .article {
+  text-decoration-line: none;
   background-color: white;
   border-radius: 16px;
   height: 576px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+@media all and (max-width: 768px) {
+  .article {
+    height: 420px;
+  }
 }

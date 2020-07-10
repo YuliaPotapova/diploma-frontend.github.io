@@ -5,3 +5,10 @@
   border-radius: 64px;
   color: white;
 }
+
+@media all and (max-width: 768px) {
+  .button_theme-blue {
+    height: 56px;
+    border-radius: 56px;
+  }
+}

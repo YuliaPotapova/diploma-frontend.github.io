@@ -6,3 +6,10 @@
   margin-left: 2px;
   display: block;
 }
+
+@media all and (max-width: 768px) {
+  .header__articles {
+    padding: 22px 0 20px;
+    margin-right: 16px;
+  }
+}

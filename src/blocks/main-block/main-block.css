@@ -1,11 +1,18 @@
 .main-block {
   width: 100%;
-  background: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.jpg);
+  background: url(../../images/background_1440.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  /* position: relative; */
+}
+
+@media all and (max-width: 768px) {
+  .main-block {
+    background: url(../../images/background_768.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }

@@ -8,3 +8,9 @@
   color: #1a1b22;
   margin: 30px 28px 28px 10px;
 }
+
+@media all and (max-width: 768px) {
+  .footer__link {
+    margin: 21px 9px 21px 8px;
+  }
+}

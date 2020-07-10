@@ -1,7 +1,6 @@
 @import url(./__content/header__content.css);
 @import url(./__nav/header__nav.css);
 @import url(./__main/header__main.css);
-@import url(../button/button.css);
 @import url(./_button-log-out/header_button-log-out.css);
 @import url(./__button-log-out-icon/header__button-log-out-icon.css);
 @import url(./__articles/header__articles.css);
@@ -18,4 +17,10 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
+}
+
+@media all and (max-width: 768px) {
+  .header {
+    font-size: 16px;
+  }
 }

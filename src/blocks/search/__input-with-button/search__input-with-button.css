@@ -4,3 +4,9 @@
   margin-bottom: 80px;
   position: relative;
 }
+
+@media all and (max-width: 768px) {
+  .search__input-with-button {
+    margin-bottom: 48px;
+  }
+}

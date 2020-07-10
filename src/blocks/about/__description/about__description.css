@@ -1,8 +1,14 @@
 .about__description {
   max-width: 42%;
-  margin-top: 131px;
-  margin-left: 56px;
+  margin: 50px 0 0 56px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+
+@media all and (max-width: 768px) {
+  .about__description {
+    max-width: 61.6%;
+    margin: 0 0 0 32px;
+  }
 }

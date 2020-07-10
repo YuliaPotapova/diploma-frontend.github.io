@@ -1,5 +1,4 @@
 @import url(../../title/title.css);
-@import url(../../button/button.css);
 @import url(../_button/main-results_button.css);
 
 .main-results__content {
@@ -7,4 +6,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+@media all and (max-width: 768px) {
+  .main-results__content {
+    width: 89.6%;
+  }
 }

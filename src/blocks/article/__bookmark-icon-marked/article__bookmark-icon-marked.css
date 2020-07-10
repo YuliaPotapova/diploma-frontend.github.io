@@ -1,0 +1,19 @@
+.article__bookmark-icon-marked {
+  background: url(../../../images/bookmark-icon_marked.svg) center no-repeat;
+  background-color: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+  display: block;
+}
+
+@media all and (max-width: 768px) {
+  .article__bookmark-icon-marked {
+    top: 8px;
+    right: 8px;
+  }
+}

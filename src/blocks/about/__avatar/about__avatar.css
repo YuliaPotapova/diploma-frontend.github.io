@@ -1,7 +1,12 @@
 .about__avatar {
   box-sizing: border-box;
   border-radius: 50%;
-  width: 32%;
-  /* height: 464px; */
-  margin: 80px 0 80px 104px;
+  width: 37.7%;
+}
+
+@media all and (max-width: 768px) {
+  .about__avatar {
+    width: 33.7%;
+    margin: 10px 0;
+  }
 }

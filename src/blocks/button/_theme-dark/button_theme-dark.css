@@ -6,3 +6,12 @@
   color: #1a1b22;
   margin: 19px 0 13px;
 }
+
+@media all and (max-width: 768px) {
+  .button_theme-dark {
+    height: 40px;
+    border-radius: 40px;
+    margin: 14px 0 12px;
+    border: 1px solid #d1d2d6;
+  }
+}

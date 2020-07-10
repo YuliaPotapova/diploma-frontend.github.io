@@ -4,3 +4,9 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
+@media all and (max-width: 768px) {
+  .header__content {
+    width: 89.6%;
+  }
+}

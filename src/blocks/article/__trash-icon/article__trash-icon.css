@@ -27,6 +27,7 @@
   font-size: 12px;
   line-height: 14px;
   color: black;
+  z-index: 1;
   display: none;
 }
 
@@ -36,4 +37,11 @@
 
 .article__trash-icon:hover::before {
   display: block;
+}
+
+@media all and (max-width: 768px) {
+  .article__trash-icon {
+    top: 8px;
+    right: 8px;
+  }
 }

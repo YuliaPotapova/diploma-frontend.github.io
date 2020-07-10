@@ -12,3 +12,9 @@
   align-items: center;
   /* border: 2px solid orange; */
 }
+
+@media all and (max-width: 768px) {
+  .footer {
+    height: 64px;
+  }
+}

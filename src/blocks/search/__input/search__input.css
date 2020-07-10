@@ -4,17 +4,24 @@
   border: 1px solid #d1d2d6;
   box-sizing: border-box;
   border-radius: 64px;
+  outline-color: transparent;
   padding-left: 24px;
+
   font-family: "Roboto", Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
-  outline-color: transparent;
-  /* color: #b6bcbf; */
 }
 
 .search__input::-webkit-input-placeholder {color:#b6bcbf; opacity:1;}
 .search__input::-moz-placeholder          {color:#b6bcbf; opacity:1;}
 .search__input:-moz-placeholder           {color:#b6bcbf; opacity:1;}
 .search__input:-ms-input-placeholder      {color:#b6bcbf; opacity:1;}
+
+@media all and (max-width: 768px) {
+  .search__input {
+    height: 56px;
+    border-radius: 56px;
+  }
+}

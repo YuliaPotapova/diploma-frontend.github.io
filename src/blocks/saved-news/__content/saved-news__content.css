@@ -4,3 +4,9 @@
   flex-direction: column;
   align-items: flex-start;
 }
+
+@media all and (max-width: 768px) {
+  .saved-news__content {
+    width: 89.6%;
+  }
+}

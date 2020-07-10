@@ -6,3 +6,9 @@
   color: #1a1b22;
   padding: 62px 0;
 }
+
+@media all and (max-width: 768px) {
+  .saved-news {
+    padding: 24px 0 32px 0;
+  }
+}

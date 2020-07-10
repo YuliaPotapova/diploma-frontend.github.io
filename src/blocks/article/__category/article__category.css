@@ -13,3 +13,10 @@
   line-height: 24px;
   color: black;
 }
+
+@media all and (max-width: 768px) {
+  .article__category {
+    top: 8px;
+    left: 8px;
+  }
+}
