@@ -11,3 +11,11 @@
     width: 89.6%;
   }
 }
+
+@media all and (max-width: 508px) {
+  .about__content {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+  }
+}

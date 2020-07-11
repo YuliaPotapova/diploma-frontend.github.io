@@ -15,8 +15,14 @@
   justify-content: start;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 949px) {
   .article {
     height: 420px;
+  }
+}
+
+@media all and (max-width: 508px) {
+  .article {
+    height: 440px;
   }
 }

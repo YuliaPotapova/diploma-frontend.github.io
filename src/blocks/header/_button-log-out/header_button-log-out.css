@@ -1,5 +1,9 @@
 .header_button-log-out {
-  padding: 0 42px 2px 16px;
-  position: relative;
-  display: block;
+  max-width: 150px;
+  text-size-adjust: auto;
+  text-overflow: ellipsis;
+  padding: 0 16px 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

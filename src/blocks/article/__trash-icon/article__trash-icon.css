@@ -39,9 +39,16 @@
   display: block;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 949px) {
   .article__trash-icon {
     top: 8px;
     right: 8px;
+  }
+}
+
+@media all and (max-width: 508px) {
+  .article__trash-icon {
+    top: 16px;
+    right: 16px;
   }
 }

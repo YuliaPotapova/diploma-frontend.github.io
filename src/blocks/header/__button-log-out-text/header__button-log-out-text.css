@@ -1,0 +1,4 @@
+.header__button-log-out-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -7,3 +7,9 @@
   color: #1a1b22;
   margin: 0 0 3px;
 }
+
+@media all and (max-width: 508px) {
+  .popup__title {
+    margin: 0;
+  }
+}

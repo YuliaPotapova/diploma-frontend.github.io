@@ -5,8 +5,14 @@
   align-items: flex-start;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 949px) {
   .saved-news__content {
     width: 89.6%;
+  }
+}
+
+@media all and (max-width: 508px) {
+  .saved-news__content {
+    width: 90%;
   }
 }

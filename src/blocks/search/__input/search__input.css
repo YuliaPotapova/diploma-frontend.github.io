@@ -23,5 +23,6 @@
   .search__input {
     height: 56px;
     border-radius: 56px;
+    padding-left: 16px;
   }
 }

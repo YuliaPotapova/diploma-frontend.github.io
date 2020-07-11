@@ -2,8 +2,14 @@
   margin-left: 28px;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 846px) {
   .footer__icon {
     margin-left: 25px;
+  }
+}
+
+@media all and (max-width: 737px) {
+  .footer__icon {
+    order: 1;
   }
 }

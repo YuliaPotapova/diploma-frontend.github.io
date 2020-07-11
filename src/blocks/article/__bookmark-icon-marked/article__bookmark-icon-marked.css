@@ -11,9 +11,16 @@
   display: block;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 949px) {
   .article__bookmark-icon-marked {
     top: 8px;
     right: 8px;
+  }
+}
+
+@media all and (max-width: 508px) {
+  .article__bookmark-icon-marked {
+    top: 16px;
+    right: 16px;
   }
 }

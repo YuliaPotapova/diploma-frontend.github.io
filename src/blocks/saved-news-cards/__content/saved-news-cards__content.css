@@ -6,7 +6,7 @@
   margin: -2px 0;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 949px) {
   .saved-news-cards__content {
     width: 89.6%;
   }

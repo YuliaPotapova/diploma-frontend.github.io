@@ -11,3 +11,10 @@
     margin-right: 16px;
   }
 }
+
+@media all and (max-width: 570px) {
+  .header__main {
+    color: white;
+    padding: 0;
+  }
+}

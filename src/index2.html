@@ -13,24 +13,49 @@
 <body class="theme-gray">
   <div class="page">
 
-    <header class="header header_light">
+    <!--------------------------------------- Хэдер ----------------------------------------------->
+    <header class="header header_light header_view">
       <div class="header__content">
         <span class="logo header_dark">NewsExplorer</span>
         <nav class="header__nav">
           <a class="header__main header_dark" href="URL" target="_blank">Главная</a>
           <a class="header__articles header_dark header_item-is-active-dark" href="URL" target="_blank">Сохранённые статьи</a>
           <button class="button button_theme-dark header_button-log-out header_dark">
-            Грета
+            <span class="header__button-log-out-text">Грета</span>
             <img class="header__button-log-out-icon" src="images/log-out-icon_black.svg" alt="">
           </button>
         </nav>
       </div>
     </header>
 
+    <!---------------------------------------Хэдер на мобилке------------------------------------->
+    <header class="header-mobile header_light header-mobile_view">
+      <div class="header__content">
+        <span class="logo header_dark">NewsExplorer</span>
+        <img class="header-mobile__menu-icon" src="images/menu-icon_dark.svg" alt="меню">
+      </div>
+    </header>
+    <!------------------------------------Меню хэдера на мобилке---------------------------------->
+    <div id="menu-popup" class="popup menu-popup header-mobile_view is-closed">
+      <div class="menu-popup__header">
+        <span class="logo">NewsExplorer</span>
+        <img class="menu-popup__close-icon" src="./images/close-menu.svg" alt="закрыть">
+      </div>
+      <div class="menu-popup__content">
+        <a class="header__main" href="URL" target="_blank">Главная</a>
+        <a class="header__articles" href="URL" target="_blank">Сохранённые статьи</a>
+        <button class="button button_theme-clear header_button-auth is-closed">Авторизоваться</button>
+        <button class="button button_theme-clear header_button-log-out menu-popup_button-log-out">
+          <span class="header__button-log-out-text">Грета</span>
+          <img class="header__button-log-out-icon" src="images/log-out-icon.svg" alt="">
+        </button>
+      </div>
+    </div>
+
     <!---------------------- Блок общей информации о сохранённых статьях -------------------------->
     <section class="saved-news">
       <div class="saved-news__content">
-        <span class="saved-news__subtitle">Сохранённые статьи</span>
+        <span class="saved-news__subtitle saved-news__subtitle_mobile">Сохранённые статьи</span>
         <h2 class="title saved-news_title">Грета, у вас 5<br>сохранённых статей</h2>
         <span class="saved-news__subtitle">По ключевым словам: <b>Природа</b>, <b>Тайга</b> и <b>2 другим</b></span>
       </div>
@@ -117,6 +142,7 @@
       </div>
     </section>
 
+    <!--------------------------------------- Подвал ----------------------------------------------->
     <section class="footer">
       <div class="footer__content">
         <span class="footer__text">© 2020 Supersite, Powered by News API</span>

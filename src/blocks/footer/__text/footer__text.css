@@ -8,3 +8,11 @@
   position: absolute;
   left: 0;
 }
+
+@media all and (max-width: 737px) {
+  .footer__text {
+    bottom: 0;
+    right: 0;
+    order: 2;
+  }
+}

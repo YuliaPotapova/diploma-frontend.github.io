@@ -11,3 +11,9 @@
     width: 58.3%;
   }
 }
+
+@media all and (max-width: 508px) {
+  .search__content {
+    width: 89.1%;
+  }
+}

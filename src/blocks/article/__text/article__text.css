@@ -10,8 +10,14 @@
   overflow: hidden;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 949px) {
   .article__text {
     margin: 0 16px 48px;
+  }
+}
+
+@media all and (max-width: 508px) {
+  .article__text {
+    margin-bottom: 44px;
   }
 }

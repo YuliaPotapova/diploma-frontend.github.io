@@ -10,3 +10,9 @@
     width: 89.6%;
   }
 }
+
+@media all and (max-width: 508px) {
+  .header__content {
+    width: 90%;
+  }
+}

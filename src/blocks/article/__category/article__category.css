@@ -14,9 +14,16 @@
   color: black;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 949px) {
   .article__category {
     top: 8px;
     left: 8px;
+  }
+}
+
+@media all and (max-width: 508px) {
+  .article__category {
+    top: 16px;
+    left: 16px;
   }
 }

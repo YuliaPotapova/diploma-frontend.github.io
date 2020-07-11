@@ -14,3 +14,10 @@
     margin: 23px 0 18px;
   }
 }
+
+@media all and (max-width: 508px) {
+  .logo {
+    margin: 16px 0 16px;
+    font-size: 16px;
+  }
+}

@@ -6,7 +6,7 @@
   font-size: 18px;
   line-height: 24px;
   color: white;
-  margin-bottom: 64px;
+  margin: 0 0 64px;
 }
 
 @media all and (max-width: 768px) {
@@ -14,6 +14,12 @@
     max-width: 452px;
     font-size: 18px;
     line-height: 24px;
-    margin-bottom: 48px;
+    margin: 0 0 48px;
+  }
+}
+
+@media all and (max-width: 508px) {
+  .search__subtitle {
+    margin: 0 0 122px;
   }
 }

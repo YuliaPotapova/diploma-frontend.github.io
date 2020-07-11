@@ -15,21 +15,45 @@
 
     <!----------------- Главный блок с фоновой картинкой (хэдер + блок поиска статей) --------------->
     <div class="main-block">
-
-      <header class="header">
+      <!------------------------------------------ Хэдер -------------------------------------------->
+      <header class="header header_view">
         <div class="header__content">
           <span class="logo">NewsExplorer</span>
           <nav class="header__nav">
             <a class="header__main header_item-is-active" href="URL" target="_blank">Главная</a>
-            <a class="header__articles is-closed" href="URL" target="_blank">Сохранённые статьи</a>
-            <button class="button button_theme-clear header_button-auth">Авторизоваться</button>
-            <button class="button button_theme-clear header_button-log-out is-closed">
-              Грета
+            <a class="header__articles" href="URL" target="_blank">Сохранённые статьи</a>
+            <button class="button button_theme-clear header_button-auth is-closed">Авторизоваться</button>
+            <button class="button button_theme-clear header_button-log-out">
+              <span class="header__button-log-out-text">Грета</span>
               <img class="header__button-log-out-icon" src="images/log-out-icon.svg" alt="">
             </button>
           </nav>
         </div>
       </header>
+      <!---------------------------------------Хэдер на мобилке------------------------------------->
+      <header class="header-mobile header-mobile_view">
+        <div class="header__content">
+          <span class="logo">NewsExplorer</span>
+          <img class="header-mobile__menu-icon" src="images/menu-icon.svg" alt="меню">
+          <img class="header-mobile__menu-icon is-closed" src="images/close-menu.svg" alt="закрыть">
+        </div>
+      </header>
+      <!------------------------------------Меню хэдера на мобилке---------------------------------->
+      <div id="menu-popup" class="popup menu-popup header-mobile_view is-closed">
+        <div class="menu-popup__header">
+          <span class="logo">NewsExplorer</span>
+          <img class="menu-popup__close-icon" src="./images/close-menu.svg" alt="закрыть">
+        </div>
+        <div class="menu-popup__content">
+          <a class="header__main" href="URL" target="_blank">Главная</a>
+          <a class="header__articles" href="URL" target="_blank">Сохранённые статьи</a>
+          <button class="button button_theme-clear header_button-auth is-closed">Авторизоваться</button>
+          <button class="button button_theme-clear header_button-log-out menu-popup_button-log-out">
+            <span class="header__button-log-out-text">Грета</span>
+            <img class="header__button-log-out-icon" src="images/log-out-icon.svg" alt="">
+          </button>
+        </div>
+      </div>
 
       <!------------------------------------ Блок поиска статей ----------------------------------->
       <section class="search">
@@ -110,7 +134,7 @@
 
     </section>
 
-    <!---------------------------------------------- Блок о себе> --------------------------------------->
+    <!------------------------------------------ Блок о себе> --------------------------------------->
     <section class="about">
       <div class="about__content">
         <img class="about__avatar" src="images/avatar_.jpg" alt="фото автора">
@@ -126,6 +150,7 @@
       </div>
     </section>
 
+    <!--------------------------------------------- Подвал ------------------------------------------>
     <section class="footer">
       <div class="footer__content">
         <span class="footer__text">© 2020 Supersite, Powered by News API</span>

@@ -16,13 +16,20 @@
 @import url(./blocks/about/about.css);
 @import url(./blocks/footer/footer.css);
 @import url(./blocks/popup/popup.css);
-@import url(./blocks/is-closed/is-closed.css);
-@import url(./blocks/is-invisible/is-invisible.css);
 
 @import url(./blocks/header/_button-auth/header_button-auth.css);
 @import url(./blocks/header/_item-is-active/header_item-is-active.css);
 @import url(./blocks/article/__bookmark-icon/article__bookmark-icon.css);
 @import url(./blocks/article/__bookmark-icon-marked/article__bookmark-icon-marked.css);
+@import url(./blocks/header-mobile/header-mobile.css);
+@import url(./blocks/menu-popup/menu-popup.css);
+@import url(./blocks/header/__main/header__main.css);
+@import url(./blocks/header/_view/header_view.css);
+@import url(./blocks/header-mobile/_view/header-mobile_view.css);
+@import url(./blocks/header/__button-log-out-text/header__button-log-out-text.css);
+@import url(./blocks/menu-popup/_button-log-out/menu-popup_button-log-out.css);
+@import url(./blocks/is-closed/is-closed.css);
+@import url(./blocks/is-invisible/is-invisible.css);
 
 body {
   background-color: #e5e5e5;

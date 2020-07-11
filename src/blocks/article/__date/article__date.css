@@ -7,3 +7,9 @@
   color: #b6bcbf;
   margin: 0 24px;
 }
+
+@media all and (max-width: 949px) {
+  .article__date {
+    margin: 0 16px;
+  }
+}

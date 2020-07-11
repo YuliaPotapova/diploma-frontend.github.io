@@ -1,0 +1,6 @@
+@media all and (max-width: 508px) {
+  .saved-news__subtitle_mobile {
+    font-size: 12px;
+    color: rgba(26, 27, 34, 0.5);
+  }
+}

@@ -12,7 +12,7 @@
   bottom: 0;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 949px) {
   .article__source {
     margin: 0px 16px 16px;
   }
