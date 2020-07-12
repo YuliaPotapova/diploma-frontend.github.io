@@ -3,6 +3,7 @@
 
 # Этап 3. **Инфраструктура и вёрстка**
 #### ***URL: <https://github.com/YuliaPotapova/diploma-frontend.github.io>***
+#### ***Адрес сайта на Github Pages: <https://yuliapotapova.github.io/diploma-frontend.github.io/>***
 #### ***Версия: 0.0.1***
 
 ***
