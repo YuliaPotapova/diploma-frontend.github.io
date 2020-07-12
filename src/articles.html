@@ -8,7 +8,7 @@
   <title>NewsExplorer</title>
   <link rel="icon" href="<%= require('./images/favicon.ico').default %>">
   <link rel="stylesheet" href="./vendor/normalize.css">
-  <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css %>">
+  <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.chunks.article.css %>">
 </head>
 <body class="theme-gray">
   <div class="page">
@@ -160,6 +160,6 @@
     </section>
 
   </div>
-  <script type="module" src="<%= htmlWebpackPlugin.files.entry %>"></script>
+  <script type="module" src="<%= htmlWebpackPlugin.files.chunks.article.entry %>"></script>
 </body>
 </html>
