@@ -9,6 +9,10 @@
   display: block;
 }
 
+.main-results_button:hover {
+  opacity: .7;
+}
+
 @media all and (max-width: 768px) {
   .main-results_button {
     min-width: 240px;

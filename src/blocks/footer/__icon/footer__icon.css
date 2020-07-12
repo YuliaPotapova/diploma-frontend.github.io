@@ -2,6 +2,10 @@
   margin-left: 28px;
 }
 
+.footer__icon:hover {
+  opacity: .7;
+}
+
 @media all and (max-width: 846px) {
   .footer__icon {
     margin-left: 25px;

@@ -9,6 +9,10 @@
   margin: 30px 28px 28px 10px;
 }
 
+.footer__link:hover {
+  opacity: .7;
+}
+
 @media all and (max-width: 846px) {
   .footer__link {
     margin: 21px 9px 21px 8px;

@@ -7,6 +7,10 @@
   margin: 19px 0 13px;
 }
 
+.button_theme-clear:hover {
+  opacity: .7;
+}
+
 @media all and (max-width: 768px) {
   .button_theme-clear {
     height: 40px;

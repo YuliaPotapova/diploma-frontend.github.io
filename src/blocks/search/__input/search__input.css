@@ -19,6 +19,10 @@
 .search__input:-moz-placeholder           {color:#b6bcbf; opacity:1;}
 .search__input:-ms-input-placeholder      {color:#b6bcbf; opacity:1;}
 
+.search__input:focus {
+  border-color: #2f71e5;
+}
+
 @media all and (max-width: 768px) {
   .search__input {
     height: 56px;

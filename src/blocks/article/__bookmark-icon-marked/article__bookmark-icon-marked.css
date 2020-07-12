@@ -11,6 +11,10 @@
   display: block;
 }
 
+.article__bookmark-icon-marked:hover {
+  opacity: .7;
+}
+
 @media all and (max-width: 949px) {
   .article__bookmark-icon-marked {
     top: 8px;

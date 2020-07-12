@@ -75,9 +75,9 @@
         <h2 class="title">Результаты поиска</h2>
         <div class="articles-list">
           <!----------------- Карточка статьи 1 ---------------->
-          <a class="article" href="#" target="_blank">
+          <div class="article">
             <div class="article__image" style="background-image: url(<%=require('./images/image_08.jpg').default%>)">
-              <div class="article__bookmark-icon"></div>
+              <button class="article__bookmark-icon"></button>
             </div>
             <span class="article__date">2 августа, 2019</span>
             <h3 class="article__title">Национальное достояние – парки</h3>
@@ -87,11 +87,11 @@
               приобщиться к природе.
             </p>
             <span class="article__source">Лента.ру</span>
-          </a>
+          </div>
           <!----------------- Карточка статьи 2 ---------------->
-          <a class="article" href="#" target="_blank">
+          <div class="article">
             <div class="article__image" style="background-image: url(<%=require('./images/image_04.jpg').default%>)">
-              <div class="article__bookmark-icon-marked"></div>
+              <button class="article__bookmark-icon-marked"></button>
             </div>
             <span class="article__date">2 августа, 2019</span>
             <h3 class="article__title">Лесные огоньки: история одной фотографии</h3>
@@ -100,11 +100,11 @@
               запечатлеть ускользающую красоту одного из местных чудес природы.
             </p>
             <span class="article__source">Медуза</span>
-          </a>
+          </div>
           <!---------------- Карточка статьи 3 ----------------->
-          <a class="article" href="#" target="_blank">
+          <div class="article">
             <div class="article__image" style="background-image: url(<%=require('./images/image_07.jpg').default%>)">
-              <div class="article__bookmark-icon"></div>
+              <button class="article__bookmark-icon"></button>
             </div>
             <span class="article__date">2 августа, 2019</span>
             <h3 class="article__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
@@ -113,7 +113,7 @@
               их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...
             </p>
             <span class="article__source">Риа</span>
-          </a>
+          </div>
           <!---------------------------------------------------->
         </div>
         <button class="button main-results_button">Показать еще</button>
@@ -125,7 +125,7 @@
         <p class="main-results__info-message">Идет поиск новостей...</p>
       </div>
 
-      <!-------------------------- Блок результатов, когда ничего не найдено> --------------------------->
+      <!-------------------------- Блок результатов, когда ничего не найдено ---------------------------->
       <div class="main-results__not-found is-closed">
         <img class="main-results__not-found-image" src="<%=require('./images/not-found_v1.svg').default%>" alt="изоражение печальной лупы"></img>
         <h3 class="main-results__not-found-title">Ничего не найдено</h3>
