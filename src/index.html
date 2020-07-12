@@ -77,10 +77,10 @@
           <!----------------- Карточка статьи 1 ---------------->
           <a class="article" href="#" target="_blank">
             <div class="article__image" style="background-image: url(<%=require('./images/image_08.jpg').default%>)">
-              <button class="article__bookmark-icon"></button>
+              <div class="article__bookmark-icon"></div>
             </div>
             <span class="article__date">2 августа, 2019</span>
-            <h3 class="article__title">Национальное достояние – парки</h4>
+            <h3 class="article__title">Национальное достояние – парки</h3>
             <p class="article__text">
               В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться
               система национальных парков – охраняемых территорий, где и сегодня каждый может
@@ -91,10 +91,10 @@
           <!----------------- Карточка статьи 2 ---------------->
           <a class="article" href="#" target="_blank">
             <div class="article__image" style="background-image: url(<%=require('./images/image_04.jpg').default%>)">
-              <button class="article__bookmark-icon-marked"></button>
+              <div class="article__bookmark-icon-marked"></div>
             </div>
             <span class="article__date">2 августа, 2019</span>
-            <h3 class="article__title">Лесные огоньки: история одной фотографии</h4>
+            <h3 class="article__title">Лесные огоньки: история одной фотографии</h3>
             <p class="article__text">
               Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы
               запечатлеть ускользающую красоту одного из местных чудес природы.
@@ -104,10 +104,10 @@
           <!---------------- Карточка статьи 3 ----------------->
           <a class="article" href="#" target="_blank">
             <div class="article__image" style="background-image: url(<%=require('./images/image_07.jpg').default%>)">
-              <button class="article__bookmark-icon"></button>
+              <div class="article__bookmark-icon"></div>
             </div>
             <span class="article__date">2 августа, 2019</span>
-            <h3 class="article__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h4>
+            <h3 class="article__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
             <p class="article__text">
               Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости
               их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...
@@ -180,11 +180,11 @@
 
           <span class="popup__inputs-name">Email</span>
           <input type="email" name="email" class="popup__input" placeholder="Введите почту">
-          <p id="error-email" class="error-message is-invisible">Неправильный формат email</p>
+          <p id="entry_error-email" class="error-message is-invisible">Неправильный формат email</p>
 
           <span class="popup__inputs-name">Пароль</span>
           <input type="password" name="password" class="popup__input" placeholder="Введите пароль">
-          <p id="error-email" class="error-message is-invisible">Пароль обязателен</p>
+          <p id="entry_error-password" class="error-message is-invisible">Пароль обязателен</p>
 
           <button name="submit" class="button popup__button button_not-active">Войти</button>
           <button name="submit" class="button popup__button button_theme-blue is-closed">Войти</button>
@@ -206,17 +206,17 @@
 
           <span class="popup__inputs-name">Email</span>
           <input type="email" name="email" class="popup__input" placeholder="Введите почту">
-          <p id="error-email" class="error-message is-invisible">Неправильный формат email</p>
+          <p id="registration_error-email" class="error-message is-invisible">Неправильный формат email</p>
 
           <span class="popup__inputs-name">Пароль</span>
           <input type="password" name="password" class="popup__input" placeholder="Введите пароль">
-          <p id="error-password" class="error-message is-invisible">это на всякий случай</p>
+          <p id="registration_error-password" class="error-message is-invisible">это на всякий случай</p>
 
           <span class="popup__inputs-name">Имя</span>
           <input type="text" name="name" class="popup__input" placeholder="Введите своё имя">
-          <p id="error-name" class="error-message is-invisible">и это наверняка пригодится</p>
+          <p id="registration_error-name" class="error-message is-invisible">и это наверняка пригодится</p>
 
-          <p id="error-user" class="error-message popup_error-already-exist is-invisible">Такой пользователь уже есть</p>
+          <p id="registration_error-user" class="error-message popup_error-already-exist is-invisible">Такой пользователь уже есть</p>
 
           <button name="submit" class="button popup__button button_not-active">Зарегистрироваться</button>
           <button name="submit" class="button popup__button button_theme-blue is-closed">Зарегистрироваться</button>
@@ -239,6 +239,6 @@
     </div>
 
   </div>
-  <script type="module" src="<%= htmlWebpackPlugin.files.entry %>"></script>
+  <script type="module" src="<%= htmlWebpackPlugin.files.js %>"></script>
 </body>
 </html>
