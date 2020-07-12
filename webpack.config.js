@@ -1,13 +1,15 @@
-﻿const path = require('path');
+const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
-  entry: { main: './src/index.js' },
+  entry: {
+     main: './src/index.js',
+     articles: './src/articles.js'
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[chunkhash].js'
@@ -24,30 +26,48 @@ module.exports = {
       {
         test: /\.(png|jpe?g|gif|ico|svg)$/,
         use: [
-          'file-loader?name=./src/images/[name].[ext]', // указали папку, куда складывать изображения
+          {
+            loader: 'file-loader',
+            options: {
+              name: './images/[name].[ext]'
+            },
+          },
           {
             loader: 'image-webpack-loader',
-            options: {}
-          }
-        ]
+          },
+        ],
       },
       {
         test: /\.css$/i,
         use: [
-          (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
-          'css-loader',
-          'postcss-loader'
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '../',
+            },
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'postcss-loader'
+          },
         ]
       },
       {
         test: /\.(eot|ttf|woff|woff2)$/,
-        loader: 'file-loader?name=./src/vendor/[name].[ext]'
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: './vendor/[name].[ext]'
+          },
+        }]
       }
     ]
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'style.[contenthash].css',
+      filename: './styles/[name].[contenthash].css',
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
@@ -60,7 +80,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/index.html',
-      filename: 'index.html'
+      filename: 'index.html',
+      chunks: ['main']
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: './src/articles.html',
+      filename: 'articles.html',
+      chunks: ['articles']
     }),
     new WebpackMd5Hash(),
     new webpack.DefinePlugin({
