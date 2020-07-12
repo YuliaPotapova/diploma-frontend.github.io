@@ -8,7 +8,7 @@
   <title>NewsExplorer</title>
   <link rel="icon" href="<%= require('./images/favicon.ico').default %>">
   <link rel="stylesheet" href="./vendor/normalize.css">
-  <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.chunks.articles.css %>">
+  <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css %>">
 </head>
 <body class="theme-gray">
   <div class="page">
@@ -67,7 +67,7 @@
         <div class="articles-list">
           <!----------------- Карточка статьи 1 ---------------->
           <a class="article" href="#" target="_blank">
-            <div class="article__image" style="background-image: url(src/images/image_06.jpg)">
+            <div class="article__image" style="background-image: url(<%=require('./images/image_06.jpg').default%>)">
               <button class="article__trash-icon"></button>
             </div>
             <span class="article__category">Природа</span>
@@ -82,7 +82,7 @@
           </a>
           <!----------------- Карточка статьи 2 ---------------->
           <a class="article" href="#" target="_blank">
-            <div class="article__image" style="background-image: url(src/images/image_01.jpg)">
+            <div class="article__image" style="background-image: url(<%=require('./images/image_01.jpg').default%>)">
               <button class="article__trash-icon"></button>
             </div>
             <span class="article__category">Природа</span>
@@ -96,7 +96,7 @@
           </a>
           <!---------------- Карточка статьи 3 ----------------->
           <a class="article" href="#" target="_blank">
-            <div class="article__image" style="background-image: url(src/images/image_05.jpg)">
+            <div class="article__image" style="background-image: url(<%=require('./images/image_05.jpg').default%>)">
               <button class="article__trash-icon"></button>
             </div>
             <span class="article__category">Тайга</span>
@@ -110,7 +110,7 @@
           </a>
           <!----------------- Карточка статьи 4 ---------------->
           <a class="article" href="#" target="_blank">
-            <div class="article__image" style="background-image: url(src/images/image_06.jpg)">
+            <div class="article__image" style="background-image: url(<%=require('./images/image_06.jpg').default%>)">
               <button class="article__trash-icon"></button>
             </div>
             <span class="article__category">Парки</span>
@@ -125,7 +125,7 @@
           </a>
           <!----------------- Карточка статьи 5 ---------------->
           <a class="article" href="#" target="_blank">
-            <div class="article__image" style="background-image: url(src/images/image_01.jpg)">
+            <div class="article__image" style="background-image: url(<%=require('./images/image_01.jpg').default%>)">
               <button class="article__trash-icon"></button>
             </div>
             <span class="article__category">Фотография</span>
@@ -160,6 +160,6 @@
     </section>
 
   </div>
-  <script type="module" src="<%= htmlWebpackPlugin.files.chunks.articles.entry %>"></script>
+  <script type="module" src="<%= htmlWebpackPlugin.files.entry %>"></script>
 </body>
 </html>

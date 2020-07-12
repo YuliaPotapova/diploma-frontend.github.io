@@ -8,7 +8,7 @@
   <title>NewsExplorer</title>
   <link rel="icon" href="<%= require('./images/favicon.ico').default %>">
   <link rel="stylesheet" href="./vendor/normalize.css">
-  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css%>">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css%>">
 </head>
 <body class="theme-gray">
   <div class="page">
@@ -76,7 +76,7 @@
         <div class="articles-list">
           <!----------------- Карточка статьи 1 ---------------->
           <a class="article" href="#" target="_blank">
-            <div class="article__image" style="background-image: url(src/images/image_08.jpg)">
+            <div class="article__image" style="background-image: url(<%=require('./images/image_08.jpg').default%>)">
               <button class="article__bookmark-icon"></button>
             </div>
             <span class="article__date">2 августа, 2019</span>
@@ -90,7 +90,7 @@
           </a>
           <!----------------- Карточка статьи 2 ---------------->
           <a class="article" href="#" target="_blank">
-            <div class="article__image" style="background-image: url(src/images/image_04.jpg)">
+            <div class="article__image" style="background-image: url(<%=require('./images/image_04.jpg').default%>)">
               <button class="article__bookmark-icon-marked"></button>
             </div>
             <span class="article__date">2 августа, 2019</span>
@@ -103,7 +103,7 @@
           </a>
           <!---------------- Карточка статьи 3 ----------------->
           <a class="article" href="#" target="_blank">
-            <div class="article__image" style="background-image: url(src/images/image_07.jpg)">
+            <div class="article__image" style="background-image: url(<%=require('./images/image_07.jpg').default%>)">
               <button class="article__bookmark-icon"></button>
             </div>
             <span class="article__date">2 августа, 2019</span>
@@ -239,6 +239,6 @@
     </div>
 
   </div>
-  <script type="module" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+  <script type="module" src="<%= htmlWebpackPlugin.files.entry %>"></script>
 </body>
 </html>
