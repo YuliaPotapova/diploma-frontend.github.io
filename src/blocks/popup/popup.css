@@ -12,7 +12,7 @@
 @import url(./__alternative/popup__alternative.css);
 @import url(./__link/popup__link.css);
 @import url(../error-message/error-message.css);
-@import url(./_error-already-exist/popup__error-already-exist.css);
+@import url(./_api-error/popup_api-error.css);
 @import url(./__content/_success/popup__content_success.css);
 @import url(./__link/_success/popup__link_success.css);
 

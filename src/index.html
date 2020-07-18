@@ -179,12 +179,14 @@
         <form class="popup__form" name="entry">
 
           <span class="popup__inputs-name">Email</span>
-          <input type="email" name="email" class="popup__input" placeholder="Введите почту">
-          <p id="entry_error-email" class="error-message is-invisible">Неправильный формат email</p>
+          <input type="email" name="entry_email" class="popup__input" placeholder="Введите почту">
+          <p id="error-entry_email" class="error-message is-invisible">Неправильный формат email</p>
 
           <span class="popup__inputs-name">Пароль</span>
-          <input type="password" name="password" class="popup__input" placeholder="Введите пароль">
-          <p id="entry_error-password" class="error-message is-invisible">Пароль обязателен</p>
+          <input type="password" name="entry_password" class="popup__input" placeholder="Введите пароль">
+          <p id="error-entry_password" class="error-message is-invisible">Пароль обязателен</p>
+
+          <p id="error-entry_user" class="error-message popup_api-error is-invisible">Неверный логин или пароль</p>
 
           <button name="submit" class="button popup__button button_not-active">Войти</button>
           <button name="submit" class="button popup__button button_theme-blue is-closed">Войти</button>
@@ -205,18 +207,18 @@
         <form class="popup__form" name="registration">
 
           <span class="popup__inputs-name">Email</span>
-          <input type="email" name="email" class="popup__input" placeholder="Введите почту">
-          <p id="registration_error-email" class="error-message is-invisible">Неправильный формат email</p>
+          <input type="email" name="registration_email" class="popup__input" placeholder="Введите почту">
+          <p id="error-registration_email" class="error-message is-invisible">Неправильный формат email</p>
 
           <span class="popup__inputs-name">Пароль</span>
-          <input type="password" name="password" class="popup__input" placeholder="Введите пароль">
-          <p id="registration_error-password" class="error-message is-invisible">это на всякий случай</p>
+          <input type="password" name="registration_password" class="popup__input" placeholder="Введите пароль">
+          <p id="error-registration_password" class="error-message is-invisible">это на всякий случай</p>
 
           <span class="popup__inputs-name">Имя</span>
-          <input type="text" name="name" class="popup__input" placeholder="Введите своё имя">
-          <p id="registration_error-name" class="error-message is-invisible">и это наверняка пригодится</p>
+          <input type="text" name="registration_name" class="popup__input" placeholder="Введите своё имя">
+          <p id="error-registration_name" class="error-message is-invisible">и это наверняка пригодится</p>
 
-          <p id="registration_error-user" class="error-message popup_error-already-exist is-invisible">Такой пользователь уже есть</p>
+          <p id="error-registration_user" class="error-message popup_api-error is-invisible">Такой пользователь уже есть</p>
 
           <button name="submit" class="button popup__button button_not-active">Зарегистрироваться</button>
           <button name="submit" class="button popup__button button_theme-blue is-closed">Зарегистрироваться</button>
