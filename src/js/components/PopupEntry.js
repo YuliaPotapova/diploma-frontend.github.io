@@ -4,7 +4,6 @@ import { removeIsInvisible } from "../utils/utils.js";
 // =========================== Расширенный класс для всплывающего окна #popup-entry ============================
 export class PopupEntry extends Popup {
   constructor(
-    mainApi,
     validator,
     popupEl, formEl,
     closeBtnEl, submitEnabledBtnEl, submitDisabledBtnEl,
@@ -22,8 +21,11 @@ export class PopupEntry extends Popup {
       apiErrorEl,
       linkToRegistrationEl
     );
+  }
 
+  _init(mainApi, header, popupRegistration) {
     this.mainApi = mainApi;
+    this.setEventListeners(header, popupRegistration)
   }
 
   async submit(header) {

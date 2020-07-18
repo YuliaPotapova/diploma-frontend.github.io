@@ -16,6 +16,11 @@ export class NewsApi {
       pageSize: this.config.pageSize,
     })
 
-    return fetch(this.config.baseUrl + "/v2/everything?" + query.toString()).then(res => res.json());
+    return fetch(this.config.baseUrl + "/v2/everything?" + query.toString())
+    .then(res => res.json())
+    .then(data => {
+      data.articles.forEach(el => el.keyword = word)
+      return data.articles;
+    });
   }
 }

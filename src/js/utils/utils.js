@@ -1,4 +1,3 @@
-import {Header} from '../components/Header.js';
 
 export function setIsClosed (elementsArray) {
   elementsArray.forEach(el => {
@@ -24,22 +23,12 @@ export function removeIsInvisible (elementsArray) {
   })
 }
 
-export function getHeader(document, mainApi, popupEntry) {
-  const headerEl = document.querySelector('.header');
-  const headerArticlesEl = headerEl.querySelector('.header__articles');
-  const headerButtonAuthEl = headerEl.querySelector('.header_button-auth');
-  const headerButtonLogOutEl = headerEl.querySelector('.header_button-log-out');
-  const headerButtonLogOutTextEl = headerEl.querySelector('.header__button-log-out-text');
-  const menuPopupEl = document.querySelector('#menu-popup');
-  const headerMobileArticlesEl = menuPopupEl.querySelector('.header__articles');
-  const headerMobileButtonAuthEl = menuPopupEl.querySelector('.header_button-auth');
-  const headerMobileButtonLogOutEl = menuPopupEl.querySelector('.header_button-log-out');
-  const headerMobileButtonLogOutTextEl = menuPopupEl.querySelector('.header__button-log-out-text');
+ // Метод экранирования данных, вводимых пользователем (для insertAdjacentHTML)
+ export function escapeHtml(string) {
+    const entityMap = {
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+      '/': '&#x2F;', '`': '&#x60;', '=': '&#x3D;'
+    };
+    return String(string).replace(/[&<>"'`=/]/g, (s) => entityMap[s]);
+  }
 
-  return new Header(
-    [headerArticlesEl,headerMobileArticlesEl],
-    [headerButtonAuthEl,headerMobileButtonAuthEl],
-    [headerButtonLogOutEl,headerMobileButtonLogOutEl],
-    [headerButtonLogOutTextEl,headerMobileButtonLogOutTextEl],
-    mainApi, popupEntry);
-}

@@ -1,23 +1,30 @@
-import {getHeader} from './js/utils/utils.js';
-import {MainApi} from './js/api/MainApi.js';
-import {Popup} from './js/components/Popup.js';
-import {PopupEntry} from './js/components/PopupEntry.js';
-import {PopupRegistration} from './js/components/PopupRegistration.js';
-import {Validator} from './js/components/Validator.js';
-import {mainConfig, newConfig, newsConfig} from './js/config.js';
-import './index.css';
+import { MainApi } from './js/api/MainApi.js';
+import { Header } from './js/components/Header.js';
+import { PopupSuccess } from './js/components/PopupSuccess.js';
+import { PopupEntry } from './js/components/PopupEntry.js';
+import { PopupRegistration } from './js/components/PopupRegistration.js';
+import { Validator } from './js/components/Validator.js';
+import { mainConfig, newsConfig } from './js/config.js';
 import { NewsApi } from './js/api/NewsApi.js';
+import { Search } from './js/components/Search.js';
+import { NewsCardList } from './js/components/NewsCardList.js';
 
-/* Константы */
-const validatorErrors = {
-  mandatoryField: 'Это обязательное поле',
-  nameLength: 'Должно быть от 2 до 30 символов',
-  mustBeEmail: 'Неправильный формат email',
-  passwordLength: 'Должно быть не менее 8 символов'
-}
-const ud = undefined;
+import './index.css';
+
 
 /* Постоянные - элементы разметки */
+
+const headerEl = document.querySelector('.header');
+const headerArticlesEl = headerEl.querySelector('.header__articles');
+const headerButtonAuthEl = headerEl.querySelector('.header_button-auth');
+const headerButtonLogOutEl = headerEl.querySelector('.header_button-log-out');
+const headerButtonLogOutTextEl = headerEl.querySelector('.header__button-log-out-text');
+const menuPopupEl = document.querySelector('#menu-popup');
+const headerMobileArticlesEl = menuPopupEl.querySelector('.header__articles');
+const headerMobileButtonAuthEl = menuPopupEl.querySelector('.header_button-auth');
+const headerMobileButtonLogOutEl = menuPopupEl.querySelector('.header_button-log-out');
+const headerMobileButtonLogOutTextEl = menuPopupEl.querySelector('.header__button-log-out-text');
+
 const popupEntryEl = document.querySelector('#popup-entry');
 const popupRegistrationEl = document.querySelector('#popup-registration');
 const popupSuccessEl = document.querySelector('#popup-success');
@@ -38,22 +45,65 @@ const popupRegistrationApiErrorEl = popupRegistrationEl.querySelector('.popup_ap
 const popupLinkToRegistrationEl = popupEntryEl.querySelector('.popup__link');
 const popupLinkToEntryEl = popupRegistrationEl.querySelector('.popup__link');
 const successLinkToEntryEl = popupSuccessEl.querySelector('.popup__link');
+
 const searchInputEl = document.querySelector('.search__input');
 const searchBtnEl = document.querySelector('.search__button');
 
+const mainResultsEl = document.querySelector('.main-results');
+const resultContentEl = document.querySelector('.main-results__content');
+const resultLoadingEl = document.querySelector('.main-results__loading');
+const resultErrEl = document.querySelector('.main-results__not-found');
+const resultInfoEl = resultErrEl.querySelector('.main-results__info-message');
+const showMoreBtnEl = resultContentEl.querySelector('.main-results_button');
+const articlesListEl = resultContentEl.querySelector('.articles-list');
+
+
 /* Создание экземпляров классов */
+
+const validator = new Validator();
+
 const mainApi = new MainApi(mainConfig);
 const newsApi  = new NewsApi(newsConfig);
-const validator = new Validator(validatorErrors);
-const popupSuccess = new Popup(ud, popupSuccessEl, ud, popupSuccessCloseEl, ud, ud, ud, ud, ud, ud, ud, ud, ud, successLinkToEntryEl);
-const popupEntry = new PopupEntry(mainApi, validator, popupEntryEl, document.forms.entry, popupEntryCloseEl, popupEntrySubmitEnabledBtnEl, popupEntrySubmitDisabledBtnEl, popupEntryEmailErrorEl, popupEntryPasswordErrorEl, popupEntryApiErrorEl, popupLinkToRegistrationEl);
-const popupRegistration = new PopupRegistration(mainApi, validator, popupRegistrationEl, document.forms.registration, popupRegistrationCloseEl, popupRegistrationSubmitEnabledBtnEl, popupRegistrationSubmitDisabledBtnEl, popupRegistrationEmailErrorEl, popupRegistrationPasswordErrorEl, popupRegistrationNameErrorEl, popupRegistrationApiErrorEl, popupLinkToEntryEl);
-const header = getHeader(document, mainApi, popupEntry);
+
+const header = new Header(
+  [headerArticlesEl,headerMobileArticlesEl],
+  [headerButtonAuthEl,headerMobileButtonAuthEl],
+  [headerButtonLogOutEl,headerMobileButtonLogOutEl],
+  [headerButtonLogOutTextEl,headerMobileButtonLogOutTextEl]);
+
+const popupSuccess = new PopupSuccess(
+  popupSuccessEl, popupSuccessCloseEl, successLinkToEntryEl);
+
+const popupEntry = new PopupEntry(
+  validator, popupEntryEl, document.forms.entry,
+  popupEntryCloseEl, popupEntrySubmitEnabledBtnEl, popupEntrySubmitDisabledBtnEl,
+  popupEntryEmailErrorEl, popupEntryPasswordErrorEl, popupEntryApiErrorEl,
+  popupLinkToRegistrationEl);
+
+const popupRegistration = new PopupRegistration(
+  validator, popupRegistrationEl, document.forms.registration,
+  popupRegistrationCloseEl, popupRegistrationSubmitEnabledBtnEl,
+  popupRegistrationSubmitDisabledBtnEl, popupRegistrationEmailErrorEl,
+  popupRegistrationPasswordErrorEl, popupRegistrationNameErrorEl,
+  popupRegistrationApiErrorEl, popupLinkToEntryEl);
+
+const newsCardList = new NewsCardList(
+  mainResultsEl, resultContentEl, articlesListEl, showMoreBtnEl, resultLoadingEl,
+  resultErrEl, resultInfoEl);
+
+const search = new Search(validator, searchInputEl, searchBtnEl);
+
+
+/* Инициализация */
+
+header._init(mainApi, popupEntry);
+popupEntry._init(mainApi, header, popupRegistration);
+popupRegistration._init(mainApi, popupSuccess, popupEntry);
+popupSuccess._init(popupEntry);
+newsCardList._init(mainApi, newsApi, header);
+search._init(newsApi, newsCardList);
+
+
+/* Запуск */
 
 header.update();
-
-/* Слушатели событий */
-header.setEventListeners();
-popupEntry.setEventListeners(header, popupRegistration);
-popupRegistration.setEventListeners(popupSuccess, popupEntry);
-popupSuccess.setEventListeners(ud, popupEntry);

@@ -1,4 +1,4 @@
-import { removeIsInvisible, setIsInvisible, setIsClosed, removeIsClosed } from "../utils/utils";
+import { setIsInvisible, removeIsInvisible, setIsClosed, removeIsClosed } from "../utils/utils";
 
 // =================================== Класс для всплывающего окна ===========================================
 export class Popup {
