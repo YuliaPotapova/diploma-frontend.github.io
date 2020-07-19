@@ -34,7 +34,10 @@ export class Card {
     this.cardElement = cardElement.firstChild;
 
     this.iconEl = this.cardElement.querySelector('button');
-    this.iconEl.addEventListener('click', this._saveOrDeleteCard.bind(this))
+    this.cardElement.addEventListener('click', (e) => {
+      if (e.target !== this.iconEl) window.open(this.data.url);
+    });
+    this.iconEl.addEventListener('click', this._saveOrDeleteCard.bind(this));
 
     this.updateIcon();
     return this.cardElement;
@@ -51,6 +54,11 @@ export class Card {
     } else {
       this.iconEl.classList = "article__bookmark-icon";
     }
+  }
+
+  removeEventListeners (card) {
+    card.cardElement.removeEventListener('click', (e) => { window.open(card.data.url, card.data.title); });
+    card.cardElement.querySelector('button').removeEventListener('click', card._saveOrDeleteCard.bind(card));
   }
 
   _saveOrDeleteCard() {
