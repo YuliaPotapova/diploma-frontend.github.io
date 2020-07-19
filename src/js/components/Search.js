@@ -11,6 +11,9 @@ export class Search {
     this.newsCardList = newsCardList;
 
     this.searchBtnEl.addEventListener('click', this.submit.bind(this));
+    this.searchInputEl.addEventListener('keyup', (e) => {
+      if (e.keyCode === 13) this.submit.call(this);
+    });
   }
 
   _validteInput() {

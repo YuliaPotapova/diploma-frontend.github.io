@@ -11,6 +11,11 @@
   opacity: .7;
 }
 
+.button_theme-clear:focus {
+  border: 1px solid white;
+  background: transparent;
+}
+
 @media all and (max-width: 768px) {
   .button_theme-clear {
     height: 40px;

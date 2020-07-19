@@ -20,6 +20,7 @@
 @import url(./blocks/header/_button-auth/header_button-auth.css);
 @import url(./blocks/header/_item-is-active/header_item-is-active.css);
 @import url(./blocks/article/__bookmark-icon/article__bookmark-icon.css);
+@import url(./blocks/article/__bookmark-icon-black/article__bookmark-icon-black.css);
 @import url(./blocks/article/__bookmark-icon-marked/article__bookmark-icon-marked.css);
 @import url(./blocks/header-mobile/header-mobile.css);
 @import url(./blocks/menu-popup/menu-popup.css);

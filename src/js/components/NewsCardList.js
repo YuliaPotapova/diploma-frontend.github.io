@@ -48,6 +48,7 @@ export class NewsCardList {
   }
 
   renderError(err) {
+    console.log("err", err);
     if (err) this.resultInfoEl.textContent = 'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз'
     setIsClosed([this.resultContentEl, this.resultLoadingEl]);
     removeIsClosed([this.mainResultsEl, this.resultErrEl]);
@@ -62,10 +63,13 @@ export class NewsCardList {
     for (let i = 0; i<3 && this.cardsShown<this.cards.length; i++) {
       const card = this.cards[this.cardsShown];
       this.articlesListEl.appendChild(card.createElement());
-      card.updateIcon();
       this.cardsShown += 1;
     }
     this._showMoreButton();
+  }
+
+  updateCards() {
+    this.cards.forEach(card => card.updateIcon());
   }
 
   _clearCards() {

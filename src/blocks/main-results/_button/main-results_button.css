@@ -13,6 +13,11 @@
   opacity: .7;
 }
 
+.main-results_button:focus {
+  background: white;
+  border: 1px solid white;
+}
+
 @media all and (max-width: 768px) {
   .main-results_button {
     min-width: 240px;

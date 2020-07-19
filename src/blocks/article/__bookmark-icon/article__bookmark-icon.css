@@ -2,6 +2,7 @@
   background: url(../../../images/bookmark-icon_normal.svg) center no-repeat;
   background-color: transparent;
   border: none;
+  outline-width: 0;
   width: 40px;
   height: 40px;
   position: absolute;
@@ -15,6 +16,7 @@
   width: 182px;
   background-color: white;
   border-radius: 10px;
+  outline-width: 0;
   padding: 14px 0;
   text-align: center;
   position: relative;

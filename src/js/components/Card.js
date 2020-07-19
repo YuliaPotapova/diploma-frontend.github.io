@@ -6,10 +6,12 @@ export class Card {
     data,
     mainApi, newsApi, header
   ) {
-    this.data = data;
     this.mainApi = mainApi;
     this.newsApi = newsApi;
     this.header = header;
+
+    this.id = undefined
+    this.data = data;
   }
 
   // Создаёт элемент карточки и возвращает его
@@ -31,17 +33,56 @@ export class Card {
     cardElement.insertAdjacentHTML('beforeend', template);
     this.cardElement = cardElement.firstChild;
 
+    this.iconEl = this.cardElement.querySelector('button');
+    this.iconEl.addEventListener('click', this._saveOrDeleteCard.bind(this))
+
     this.updateIcon();
     return this.cardElement;
   }
 
   updateIcon() {
+    if (!this.cardElement) return;
+    if (this.header.isLoggedIn()) {
+      if (this.id) {
+        this.iconEl.classList = "article__bookmark-icon-marked";
+      } else {
+      this.iconEl.classList = "article__bookmark-icon-black";
+      }
+    } else {
+      this.iconEl.classList = "article__bookmark-icon";
+    }
+  }
 
+  _saveOrDeleteCard() {
+    if (!this.header.isLoggedIn()) return;
+
+    if (this.id) {
+      this.mainApi.removeArticle(this.id)
+      .then(res => {
+        this.id = undefined;
+        this.updateIcon();
+      })
+      .catch(err => {
+        console.log("Ошибка в removeArticle:", err);
+      })
+    } else {
+      this.mainApi.createArticle(
+        this.data.keyword, this.data.title, this.data.description,
+        this.data.publishedAt, this.data.source.name, this.data.url,
+        this.data.urlToImage)
+      .then(res => {
+        this.id = res._id;
+        this.updateIcon();
+      })
+      .catch(err => {
+        console.log("Ошибка в createArticle:", err);
+      });
+    }
   }
 
   _formatDate(date) {
     const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа',
       'сентября', 'октября', 'ноября', 'декабря'];
-    return date.getDay() + ' ' + months[date.getMonth()] + ', ' + date.getFullYear();
+    return date.getDate() + ' ' + months[date.getMonth()] + ', ' + date.getFullYear();
   }
 }

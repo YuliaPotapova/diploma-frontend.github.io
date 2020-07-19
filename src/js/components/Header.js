@@ -12,21 +12,22 @@ export class Header {
     this.loggedIn = false;
   }
 
-  _init(mainApi, popupEntry) {
+  _init(mainApi, popupEntry, newsCardList) {
     this.mainApi = mainApi;
+    this.newsCardList = newsCardList;
 
     this.buttonAuthElArr.forEach(el => {
       el.addEventListener('click', () => popupEntry.open());
     });
-    // this.buttonLogOutElArr.forEach(el => {
-    //   el.addEventListener('click', () => this.render({ isLoggedIn: false, userName: undefined }));
-    // });
+    this.buttonLogOutElArr.forEach(el => {
+      el.addEventListener('click', () => this.logout());
+    });
 
     this.render({isLoggedIn: false});
   }
 
   isLoggedIn() {
-    return this.isLoggedIn;
+    return this.loggedIn;
   }
 
   render(props) {
@@ -52,9 +53,21 @@ export class Header {
         isLoggedIn: res.isLoggedIn,
         userName: res.userName,
       });
+      this.newsCardList.updateCards();
     })
     .catch(err => {
       console.log("Ошибка в getUserData:", err.message)
     });
+  }
+
+  logout() {
+    this.mainApi.signout()
+    .then(res => {
+      if (res)
+        this.update();
+    })
+    .catch(err => {
+      console.log("Ошибка в logout:", err.message);
+    })
   }
 }

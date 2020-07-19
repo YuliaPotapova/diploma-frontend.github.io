@@ -1,5 +1,5 @@
-.article__bookmark-icon-marked {
-  background: url(../../../images/bookmark-icon_marked.svg) center no-repeat;
+.article__bookmark-icon-black {
+  background: url(../../../images/bookmark-icon_hover.svg) center no-repeat;
   background-color: transparent;
   border: none;
   outline-width: 0;
@@ -12,19 +12,19 @@
   display: block;
 }
 
-.article__bookmark-icon-marked:hover {
+.article__bookmark-icon-black:hover {
   opacity: .7;
 }
 
 @media all and (max-width: 949px) {
-  .article__bookmark-icon-marked {
+  .article__bookmark-icon-black {
     top: 8px;
     right: 8px;
   }
 }
 
 @media all and (max-width: 508px) {
-  .article__bookmark-icon-marked {
+  .article__bookmark-icon-black {
     top: 16px;
     right: 16px;
   }

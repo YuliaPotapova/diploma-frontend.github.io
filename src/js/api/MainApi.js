@@ -6,8 +6,7 @@ export class MainApi {
 
   // Регистрирует нового пользователя
   async signup(email, password, name) {
-    const url = '/signup';
-    const res = await this._request (url, 'POST', {email, password, name});
+    const res = await this._request ('/signup', 'POST', {email, password, name});
     if (res.ok) {
       const userData = await res.json();
       return { email: userData.email, userName: userData.name };
@@ -17,8 +16,15 @@ export class MainApi {
 
   // Аутентифицирует пользователя на основе почты и пароля
   async signin(email, password) {
-    const url = '/signin';
-    const res = await this._request (url, 'POST', {email, password});
+    const res = await this._request ('/signin', 'POST', {email, password});
+    if (res.ok)
+      return true;
+    throw await res.json();
+  }
+
+  // Удаляет авторизацию пользователя
+  async signout() {
+    const res = await this._request ('/users/signout', 'POST');
     if (res.ok)
       return true;
     throw await res.json();
@@ -37,21 +43,28 @@ export class MainApi {
   }
 
   // Забирает все статьи
-  getArticles() {
-    const url = '/articles';
-    return this._request (url, 'GET');
+  async getArticles() {
+    const res = await this._request ('/articles', 'GET');
+    if (res.ok) {
+
+    }
+    throw await res.json();
   }
 
   // Создаёт статью
-  createArticle(keyword, title, text, date, source, link, image) {
-    const url = '/articles';
-    return this._request (url, 'POST', {keyword, title, text, date, source, link, image});
+  async createArticle(keyword, title, text, date, source, link, image) {
+    const res = await this._request ('/articles', 'POST', {keyword, title, text, date, source, link, image});
+    if (res.ok)
+      return await res.json();
+    throw await res.json();
   }
 
   // Удаляет статью
-  removeArticle(articleId) {
-    const url = `/articles/${articleId}`;
-    return this._request (url, 'DELETE');
+  async removeArticle(articleId) {
+    const res = await this._request (`/articles/${articleId}`, 'DELETE');
+    if (res.ok)
+      return await res.json();
+    throw await res.json();
   }
 
   _request (url, method, bodyDataObj) {
@@ -60,6 +73,6 @@ export class MainApi {
       headers: this.config.headers,
       body: bodyDataObj ? JSON.stringify(bodyDataObj) : undefined,
       credentials: 'include',
-    })
+    });
   }
 }

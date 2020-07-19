@@ -96,7 +96,7 @@ const search = new Search(validator, searchInputEl, searchBtnEl);
 
 /* Инициализация */
 
-header._init(mainApi, popupEntry);
+header._init(mainApi, popupEntry, newsCardList);
 popupEntry._init(mainApi, header, popupRegistration);
 popupRegistration._init(mainApi, popupSuccess, popupEntry);
 popupSuccess._init(popupEntry);
