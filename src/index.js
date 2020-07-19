@@ -9,6 +9,7 @@ import { NewsApi } from './js/api/NewsApi.js';
 import { Search } from './js/components/Search.js';
 import { NewsCardList } from './js/components/NewsCardList.js';
 
+import './vendor/normalize.css';
 import './index.css';
 
 
@@ -19,7 +20,9 @@ const headerArticlesEl = headerEl.querySelector('.header__articles');
 const headerButtonAuthEl = headerEl.querySelector('.header_button-auth');
 const headerButtonLogOutEl = headerEl.querySelector('.header_button-log-out');
 const headerButtonLogOutTextEl = headerEl.querySelector('.header__button-log-out-text');
+const headerMobileMenuIconEl = document.querySelector('.header-mobile__menu-icon');
 const menuPopupEl = document.querySelector('#menu-popup');
+const menuPopupCloseIconEl = document.querySelector('.menu-popup__close-icon');
 const headerMobileArticlesEl = menuPopupEl.querySelector('.header__articles');
 const headerMobileButtonAuthEl = menuPopupEl.querySelector('.header_button-auth');
 const headerMobileButtonLogOutEl = menuPopupEl.querySelector('.header_button-log-out');
@@ -66,26 +69,27 @@ const mainApi = new MainApi(mainConfig);
 const newsApi  = new NewsApi(newsConfig);
 
 const header = new Header(
-  [headerArticlesEl,headerMobileArticlesEl],
-  [headerButtonAuthEl,headerMobileButtonAuthEl],
-  [headerButtonLogOutEl,headerMobileButtonLogOutEl],
-  [headerButtonLogOutTextEl,headerMobileButtonLogOutTextEl]);
+  [headerArticlesEl, headerMobileArticlesEl],
+  [headerButtonAuthEl, headerMobileButtonAuthEl],
+  [headerButtonLogOutEl, headerMobileButtonLogOutEl],
+  [headerButtonLogOutTextEl, headerMobileButtonLogOutTextEl],
+  headerMobileMenuIconEl, menuPopupEl, menuPopupCloseIconEl);
 
 const popupSuccess = new PopupSuccess(
-  popupSuccessEl, popupSuccessCloseEl, successLinkToEntryEl);
+  popupSuccessEl, popupSuccessCloseEl, successLinkToEntryEl, headerMobileMenuIconEl);
 
 const popupEntry = new PopupEntry(
   validator, popupEntryEl, document.forms.entry,
   popupEntryCloseEl, popupEntrySubmitEnabledBtnEl, popupEntrySubmitDisabledBtnEl,
   popupEntryEmailErrorEl, popupEntryPasswordErrorEl, popupEntryApiErrorEl,
-  popupLinkToRegistrationEl);
+  popupLinkToRegistrationEl, headerMobileMenuIconEl);
 
 const popupRegistration = new PopupRegistration(
   validator, popupRegistrationEl, document.forms.registration,
   popupRegistrationCloseEl, popupRegistrationSubmitEnabledBtnEl,
   popupRegistrationSubmitDisabledBtnEl, popupRegistrationEmailErrorEl,
   popupRegistrationPasswordErrorEl, popupRegistrationNameErrorEl,
-  popupRegistrationApiErrorEl, popupLinkToEntryEl);
+  popupRegistrationApiErrorEl, popupLinkToEntryEl, headerMobileMenuIconEl);
 
 const newsCardList = new NewsCardList(
   mainResultsEl, resultContentEl, articlesListEl, showMoreBtnEl, resultLoadingEl,
@@ -100,7 +104,7 @@ header._init(mainApi, popupEntry, newsCardList);
 popupEntry._init(mainApi, header, popupRegistration);
 popupRegistration._init(mainApi, popupSuccess, popupEntry);
 popupSuccess._init(popupEntry);
-newsCardList._init(mainApi, newsApi, header);
+newsCardList._init(mainApi, header);
 search._init(newsApi, newsCardList);
 
 

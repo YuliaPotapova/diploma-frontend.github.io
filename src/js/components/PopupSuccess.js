@@ -3,12 +3,13 @@ import {Popup} from './Popup.js';
 export class PopupSuccess extends Popup {
   constructor(
     popupSuccessEl, popupSuccessCloseEl,
-    successLinkToEntryEl
+    successLinkToEntryEl,
+    headerMobileMenuIconEl
   ) {
     super(
       undefined, popupSuccessEl, undefined, popupSuccessCloseEl,
       undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined,
-      successLinkToEntryEl
+      successLinkToEntryEl, headerMobileMenuIconEl
     );
   }
 

@@ -18,7 +18,8 @@ export class Validator {
 
   checkEmail(inputEl) {
     if (inputEl.value.length === 0) return this.errors.mandatoryField;
-    if (inputEl.validity.typeMismatch) return this.errors.mustBeEmail;
+    let regex = /^([A-Za-z0-9]+[-_\.])*[A-Za-z0-9]+@([A-Za-z0-9]+[-_\.])*[A-Za-z0-9]+\.[A-Za-z]{2,}$/;
+    if (!regex.test(inputEl.value)) return this.errors.mustBeEmail;
     return undefined;
   }
 

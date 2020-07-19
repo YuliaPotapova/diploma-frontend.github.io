@@ -7,7 +7,6 @@
   <meta name="author" content="Юлия Потапова">
   <title>NewsExplorer</title>
   <link rel="icon" href="<%= require('./images/favicon.ico').default %>">
-  <link rel="stylesheet" href="./vendor/normalize.css">
   <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css %>">
 </head>
 <body class="theme-gray">
@@ -18,8 +17,8 @@
       <div class="header__content">
         <span class="logo header_dark">NewsExplorer</span>
         <nav class="header__nav">
-          <a class="header__main header_dark" href="index.html" target="_blank">Главная</a>
-          <a class="header__articles header_dark header_item-is-active-dark" href="articles.html" target="_blank">Сохранённые статьи</a>
+          <a class="header__main header_dark" href="index.html">Главная</a>
+          <a class="header__articles header_dark header_item-is-active-dark" href="articles.html">Сохранённые статьи</a>
           <button class="button button_theme-dark header_button-log-out header_dark">
             <span class="header__button-log-out-text">Грета</span>
             <img class="header__button-log-out-icon" src="<%= require('./images/log-out-icon_black.svg').default %>" alt="">
@@ -33,6 +32,7 @@
       <div class="header__content">
         <span class="logo header_dark">NewsExplorer</span>
         <img class="header-mobile__menu-icon" src="<%= require('./images/menu-icon_dark.svg').default %>" alt="меню">
+        <img class="header-mobile__menu-icon is-closed" src="<%= require('./images/close-menu.svg').default %>" alt="закрыть">
       </div>
     </header>
     <!------------------------------------Меню хэдера на мобилке---------------------------------->
@@ -42,8 +42,8 @@
         <img class="menu-popup__close-icon" src="<%= require('./images/close-menu.svg').default %>" alt="закрыть">
       </div>
       <div class="menu-popup__content">
-        <a class="header__main" href="index.html" target="_blank">Главная</a>
-        <a class="header__articles" href="articles.html" target="_blank">Сохранённые статьи</a>
+        <a class="header__main" href="index.html">Главная</a>
+        <a class="header__articles" href="articles.html">Сохранённые статьи</a>
         <button class="button button_theme-clear header_button-auth is-closed">Авторизоваться</button>
         <button class="button button_theme-clear header_button-log-out menu-popup_button-log-out">
           <span class="header__button-log-out-text">Грета</span>
@@ -57,7 +57,7 @@
       <div class="saved-news__content">
         <span class="saved-news__subtitle saved-news__subtitle_mobile">Сохранённые статьи</span>
         <h2 class="title saved-news_title">Грета, у вас 5<br>сохранённых статей</h2>
-        <span class="saved-news__subtitle">По ключевым словам: <b>Природа</b>, <b>Тайга</b> и <b>2 другим</b></span>
+        <span id="keywords" class="saved-news__subtitle">По ключевым словам: <b>Природа</b>, <b>Тайга</b> и <b>2 другим</b></span>
       </div>
     </section>
 

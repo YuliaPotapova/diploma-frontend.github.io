@@ -5,3 +5,10 @@
   right: 0;
   text-align: center;
 }
+
+@media all and (max-width: 508px) {
+  .popup_api-error {
+    position: relative;
+    bottom: 0;
+  }
+}

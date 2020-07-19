@@ -7,8 +7,7 @@
   <meta name="author" content="Юлия Потапова">
   <title>NewsExplorer</title>
   <link rel="icon" href="<%= require('./images/favicon.ico').default %>">
-  <link rel="stylesheet" href="./vendor/normalize.css">
-  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css%>">
+  <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css %>">
 </head>
 <body class="theme-gray">
   <div class="page">
@@ -20,8 +19,8 @@
         <div class="header__content">
           <span class="logo">NewsExplorer</span>
           <nav class="header__nav">
-            <a class="header__main header_item-is-active" href="index.html" target="_blank">Главная</a>
-            <a class="header__articles" href="articles.html" target="_blank">Сохранённые статьи</a>
+            <a class="header__main header_item-is-active" href="index.html">Главная</a>
+            <a class="header__articles" href="articles.html">Сохранённые статьи</a>
             <button class="button button_theme-clear header_button-auth is-closed">Авторизоваться</button>
             <button class="button button_theme-clear header_button-log-out">
               <span class="header__button-log-out-text">Грета</span>
@@ -34,8 +33,7 @@
       <header class="header-mobile header-mobile_view">
         <div class="header__content">
           <span class="logo">NewsExplorer</span>
-          <img class="header-mobile__menu-icon" src="<%=require('./images/menu-icon.svg').default%>" alt="меню">
-          <img class="header-mobile__menu-icon is-closed" src="<%=require('./images/close-menu.svg').default%>" alt="закрыть">
+          <img class="header-mobile__menu-icon" src="<%=require('./images/menu-icon_.svg').default%>" alt="меню">
         </div>
       </header>
       <!------------------------------------Меню хэдера на мобилке---------------------------------->
@@ -45,8 +43,8 @@
           <img class="menu-popup__close-icon" src="<%=require('./images/close-menu.svg').default%>" alt="закрыть">
         </div>
         <div class="menu-popup__content">
-          <a class="header__main" href="index.html" target="_blank">Главная</a>
-          <a class="header__articles" href="articles.html" target="_blank">Сохранённые статьи</a>
+          <a class="header__main" href="index.html">Главная</a>
+          <a class="header__articles" href="articles.html">Сохранённые статьи</a>
           <button class="button button_theme-clear header_button-auth is-closed">Авторизоваться</button>
           <button class="button button_theme-clear header_button-log-out menu-popup_button-log-out">
             <span class="header__button-log-out-text">Грета</span>

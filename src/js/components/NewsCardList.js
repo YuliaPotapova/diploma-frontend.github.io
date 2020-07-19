@@ -18,9 +18,8 @@ export class NewsCardList {
     this.resultInfoEl = resultInfoEl;
   }
 
-  _init(mainApi, newsApi, header) {
+  _init(mainApi, header) {
     this.mainApi = mainApi;
-    this.newsApi = newsApi;
     this.header = header;
 
     this.cardsShown = 0;
@@ -30,10 +29,10 @@ export class NewsCardList {
   }
 
   renderResults(cardsData) {
-    this.cardsShown = 0;
-    this.cards = cardsData.map(el => new Card(el, this.mainApi, this.newsApi, this.header));
-
     this._clearCards();
+
+    this.cardsShown = 0;
+    this.cards = cardsData.map(el => new Card(el, this.mainApi, this.header, null));
     this.showMoreCards();
 
     if (this.cards.length > 0) {
@@ -48,8 +47,7 @@ export class NewsCardList {
   }
 
   renderError(err) {
-    console.log("err", err);
-    if (err) this.resultInfoEl.textContent = 'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз'
+     if (err) this.resultInfoEl.textContent = 'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз'
     setIsClosed([this.resultContentEl, this.resultLoadingEl]);
     removeIsClosed([this.mainResultsEl, this.resultErrEl]);
   }
@@ -76,6 +74,7 @@ export class NewsCardList {
     while (this.articlesListEl.firstChild)
       this.articlesListEl.removeChild(this.articlesListEl.firstChild);
     this.cards.forEach((card) => card.removeEventListeners());
+    this.cards = [];
   }
 
   _showMoreButton() {

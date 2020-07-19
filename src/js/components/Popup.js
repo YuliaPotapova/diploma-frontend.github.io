@@ -10,7 +10,8 @@ export class Popup {
     emailInputEl, emailErrorEl,
     passwordInputEl, passwordErrorEl,
     apiErrorEl,
-    linkEl
+    linkEl,
+    headerMobileMenuIconEl
   ) {
     this.validator = validator;
     this.popupEl = popupEl;
@@ -26,6 +27,7 @@ export class Popup {
     this.passwordErrorEl = passwordErrorEl;
     this.apiErrorEl = apiErrorEl;
     this.linkEl = linkEl;
+    this.headerMobileMenuIconEl = headerMobileMenuIconEl;
   }
 
   open() {
@@ -33,12 +35,14 @@ export class Popup {
       this.formEl.reset();
       this._validateForm();
       setIsInvisible([this.apiErrorEl]);
+      setIsClosed([this.headerMobileMenuIconEl]);
     }
     removeIsClosed([this.popupEl]);
   }
 
   close() {
     setIsClosed([this.popupEl]);
+    removeIsClosed([this.headerMobileMenuIconEl]);
   }
 
   submit() {

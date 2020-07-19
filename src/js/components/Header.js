@@ -3,31 +3,52 @@ import { Card } from './Card.js';
 
 // =================================== Класс для шапки сайта =========================================
 export class Header {
-  constructor(savedArticlesElArr, buttonAuthElArr, buttonLogOutElArr, userNamesElArr) {
+  constructor(
+    savedArticlesElArr,
+    buttonAuthElArr,
+    buttonLogOutElArr,
+    userNamesElArr,
+    mobileMenuIconEl,
+    menuPopupEl,
+    menuPopupCloseIconEl
+  ) {
     this.savedArticlesElArr = savedArticlesElArr;
     this.buttonAuthElArr = buttonAuthElArr;
     this.buttonLogOutElArr = buttonLogOutElArr;
     this.userNamesArr = userNamesElArr;
+    this.mobileMenuIconEl = mobileMenuIconEl;
+    this.menuPopupEl = menuPopupEl;
+    this.menuPopupCloseIconEl = menuPopupCloseIconEl;
 
     this.loggedIn = false;
+    this.userName = "";
   }
 
-  _init(mainApi, popupEntry, newsCardList) {
+  _init(mainApi, popupEntry, cardList) {
     this.mainApi = mainApi;
-    this.newsCardList = newsCardList;
+    this.cardList = cardList;
 
     this.buttonAuthElArr.forEach(el => {
-      el.addEventListener('click', () => popupEntry.open());
+      el.addEventListener('click', () => {
+        setIsClosed([this.menuPopupEl, this.mobileMenuIconEl]);
+        popupEntry.open();
+      });
     });
     this.buttonLogOutElArr.forEach(el => {
       el.addEventListener('click', () => this.logout());
     });
+    this.mobileMenuIconEl.addEventListener('click', () => removeIsClosed([this.menuPopupEl]));
+    this.menuPopupCloseIconEl.addEventListener('click', () => setIsClosed([this.menuPopupEl]));
 
     this.render({isLoggedIn: false});
   }
 
   isLoggedIn() {
     return this.loggedIn;
+  }
+
+  getName() {
+    return this.userName;
   }
 
   render(props) {
@@ -44,6 +65,7 @@ export class Header {
       setIsClosed(this.buttonLogOutElArr);
     }
     this.loggedIn = props.isLoggedIn;
+    this.userName = props.userName;
   }
 
   update() {
@@ -53,7 +75,7 @@ export class Header {
         isLoggedIn: res.isLoggedIn,
         userName: res.userName,
       });
-      this.newsCardList.updateCards();
+      this.cardList.updateCards();
     })
     .catch(err => {
       console.log("Ошибка в getUserData:", err.message)

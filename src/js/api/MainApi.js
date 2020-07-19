@@ -46,7 +46,17 @@ export class MainApi {
   async getArticles() {
     const res = await this._request ('/articles', 'GET');
     if (res.ok) {
-
+      const articles = await res.json();
+      return articles.map((a) => { return {
+        _id: a._id,
+        keyword: a.keyword,
+        title: a.title,
+        description: a.text,
+        url: a.link,
+        urlToImage: a.image,
+        publishedAt: a.date,
+        source: { name: a.source },
+      };})
     }
     throw await res.json();
   }

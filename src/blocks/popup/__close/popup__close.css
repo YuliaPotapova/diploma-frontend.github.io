@@ -5,3 +5,16 @@
   right: -45px;
   cursor: pointer;
 }
+
+.popup__close:hover {
+  cursor: pointer;
+  opacity: .7;
+}
+
+@media all and (max-width: 508px) {
+  .popup__close {
+    top: -41px;
+    right: 16px;
+    width: 24px;
+  }
+}

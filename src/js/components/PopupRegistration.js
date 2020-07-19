@@ -9,7 +9,8 @@ export class PopupRegistration extends Popup {
     closeBtnEl, submitEnabledBtnEl, submitDisabledBtnEl,
     emailErrorEl, passwordErrorEl, nameErrorEl,
     apiErrorEl,
-    linkToEntryEl
+    linkToEntryEl,
+    headerMobileMenuIconEl
   ) {
     super(
       validator,
@@ -19,7 +20,8 @@ export class PopupRegistration extends Popup {
       formEl.elements.registration_email, emailErrorEl,
       formEl.elements.registration_password, passwordErrorEl,
       apiErrorEl,
-      linkToEntryEl
+      linkToEntryEl,
+      headerMobileMenuIconEl
     );
   }
 

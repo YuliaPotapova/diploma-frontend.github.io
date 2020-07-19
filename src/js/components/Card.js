@@ -4,25 +4,28 @@ import { escapeHtml } from "../utils/utils";
 export class Card {
   constructor (
     data,
-    mainApi, newsApi, header
+    mainApi, header, cardList
   ) {
     this.mainApi = mainApi;
-    this.newsApi = newsApi;
     this.header = header;
+    this.cardList = cardList;
 
-    this.id = undefined
+    this.id = data._id;
     this.data = data;
+
+    this.saved = data._id !== undefined;
   }
 
   // Создаёт элемент карточки и возвращает его
   createElement() {
     const d = this.data
-
+    const keywordElement = this.saved ? `<span class="article__category">${escapeHtml(d.keyword)}</span>` : '';
     const template =
             `<div class="article">
               <div class="article__image" style="background-image: url(${d.urlToImage})">
-                <button class="article__bookmark-icon"></button>
+                <button class="article__trash-icon"></button>
               </div>
+              ${keywordElement}
               <span class="article__date">${this._formatDate(new Date(d.publishedAt))}</span>
               <h3 class="article__title">${escapeHtml(d.title)}</h3>
               <p class="article__text">${escapeHtml(d.description)}</p>
@@ -44,12 +47,12 @@ export class Card {
   }
 
   updateIcon() {
-    if (!this.cardElement) return;
+    if (this.saved || !this.cardElement) return;
     if (this.header.isLoggedIn()) {
       if (this.id) {
         this.iconEl.classList = "article__bookmark-icon-marked";
       } else {
-      this.iconEl.classList = "article__bookmark-icon-black";
+        this.iconEl.classList = "article__bookmark-icon-black";
       }
     } else {
       this.iconEl.classList = "article__bookmark-icon";
@@ -68,7 +71,10 @@ export class Card {
       this.mainApi.removeArticle(this.id)
       .then(res => {
         this.id = undefined;
-        this.updateIcon();
+        if (this.saved)
+          this.cardList.removeCard(this);
+        else
+          this.updateIcon();
       })
       .catch(err => {
         console.log("Ошибка в removeArticle:", err);
