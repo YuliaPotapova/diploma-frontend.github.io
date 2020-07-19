@@ -56,14 +56,14 @@ export class Card {
     }
   }
 
-  removeEventListeners (card) {
-    card.cardElement.removeEventListener('click', (e) => { window.open(card.data.url, card.data.title); });
-    card.cardElement.querySelector('button').removeEventListener('click', card._saveOrDeleteCard.bind(card));
+  removeEventListeners () {
+    if (!this.cardElement) return;
+    this.cardElement.removeEventListener('click', (e) => { window.open(this.data.url, this.data.title); });
+    this.cardElement.querySelector('button').removeEventListener('click', this._saveOrDeleteCard.bind(this));
   }
 
   _saveOrDeleteCard() {
     if (!this.header.isLoggedIn()) return;
-
     if (this.id) {
       this.mainApi.removeArticle(this.id)
       .then(res => {

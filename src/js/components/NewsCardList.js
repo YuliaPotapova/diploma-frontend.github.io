@@ -69,12 +69,13 @@ export class NewsCardList {
   }
 
   updateCards() {
-    this.cards.forEach(card => card.updateIcon());
+    this.cards.forEach((card) => card.updateIcon());
   }
 
   _clearCards() {
     while (this.articlesListEl.firstChild)
       this.articlesListEl.removeChild(this.articlesListEl.firstChild);
+    this.cards.forEach((card) => card.removeEventListeners());
   }
 
   _showMoreButton() {
