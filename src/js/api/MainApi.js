@@ -23,7 +23,7 @@ export default class MainApi {
 
   // Удаляет авторизацию пользователя
   async signout() {
-    const res = await this._request('/users/signout', 'POST');
+    const res = await this._request('/signout', 'POST');
     if (res.ok) return true;
     throw await res.json();
   }
