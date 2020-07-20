@@ -1,0 +1,26 @@
+.main-block {
+  width: 100%;
+  background: url(../../images/background_1440.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@media all and (max-width: 950px) {
+  .main-block {
+    background: url(../../images/background_768.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@media all and (max-width: 508px) {
+  .main-block {
+    background: url(../../images/background_320.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

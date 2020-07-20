@@ -1,0 +1,16 @@
+.menu-popup__content {
+  width: 100%;
+  background-color: #1A1B22;
+  position: relative;
+  box-sizing: border-box;
+  padding: 16px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  font-family: "Roboto", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 56px;
+}

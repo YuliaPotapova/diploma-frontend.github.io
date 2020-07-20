@@ -1,0 +1,11 @@
+.header_light {
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+@media all and (max-width: 570px) {
+  .header_light {
+    position: fixed;
+    z-index: 2;
+  }
+}

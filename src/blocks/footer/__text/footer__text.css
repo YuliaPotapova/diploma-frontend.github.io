@@ -1,0 +1,18 @@
+.footer__text {
+  font-family: "Roboto", Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #b6bcbf;
+  position: absolute;
+  left: 0;
+}
+
+@media all and (max-width: 737px) {
+  .footer__text {
+    bottom: 0;
+    right: 0;
+    order: 2;
+  }
+}

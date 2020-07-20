@@ -1,0 +1,6 @@
+.saved-news-cards {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #F5F6F7;
+}

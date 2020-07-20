@@ -1,0 +1,21 @@
+.about__description {
+  max-width: 60%;
+  margin: 0 0 0 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+@media all and (max-width: 768px) {
+  .about__description {
+    max-width: 61.6%;
+    margin: 0 0 0 32px;
+  }
+}
+
+@media all and (max-width: 508px) {
+  .about__description {
+    max-width: 100%;
+    margin: 0;
+  }
+}

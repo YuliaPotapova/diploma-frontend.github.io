@@ -1,0 +1,19 @@
+.search__input-with-button {
+  width: 100%;
+  display: flex;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+@media all and (max-width: 768px) {
+  .search__input-with-button {
+    margin-bottom: 48px;
+  }
+}
+
+@media all and (max-width: 508px) {
+  .search__input-with-button {
+    flex-direction: column;
+    margin-bottom: 32px;
+  }
+}

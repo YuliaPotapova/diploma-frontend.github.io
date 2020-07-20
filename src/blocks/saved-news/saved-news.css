@@ -1,0 +1,34 @@
+.saved-news {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  color: #1a1b22;
+  padding: 62px 0;
+}
+
+@media all and (max-width: 949px) {
+  .saved-news {
+    padding: 24px 0 32px;
+  }
+}
+
+/* @media all and (max-width: 625px) {
+  .saved-news {
+    padding: 8px 0 32px;
+    margin-top: 70px;
+  }
+} */
+
+@media all and (max-width: 570px) {
+  .saved-news {
+    margin-top: 66px;
+  }
+}
+
+@media all and (max-width: 508px) {
+  .saved-news {
+    padding: 8px 0 32px;
+    margin-top: 57px;
+  }
+}

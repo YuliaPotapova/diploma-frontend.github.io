@@ -1,0 +1,22 @@
+.article__image {
+  min-height: 272px;
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  margin-bottom: 20px;
+}
+
+@media all and (max-width: 949px) {
+  .article__image {
+    min-height: 150px;
+    margin-bottom: 16px;
+  }
+}
+
+@media all and (max-width: 508px) {
+  .article__image {
+    min-height: 196px;
+    margin-bottom: 16px;
+  }
+}

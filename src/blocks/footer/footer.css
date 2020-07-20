@@ -1,0 +1,28 @@
+@import url(./__content/footer__content.css);
+@import url(./__text/footer__text.css);
+@import url(./__link/footer__link.css);
+@import url(./__icon/footer__icon.css);
+@import url(./__links/footer__links.css);
+
+.footer {
+  width: 100%;
+  background: white;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid orange; */
+}
+
+@media all and (max-width: 846px) {
+  .footer {
+    height: 64px;
+  }
+}
+
+@media all and (max-width: 737px) {
+  .footer {
+    height: 134px;
+    padding: 20px 0 22px;
+  }
+}

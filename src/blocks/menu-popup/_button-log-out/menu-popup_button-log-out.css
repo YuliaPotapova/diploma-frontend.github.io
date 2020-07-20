@@ -1,0 +1,5 @@
+@media all and (max-width: 570px) {
+  .menu-popup_button-log-out {
+    max-width: 100%;
+  }
+}

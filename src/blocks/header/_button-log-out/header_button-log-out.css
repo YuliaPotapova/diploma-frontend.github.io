@@ -1,0 +1,9 @@
+.header_button-log-out {
+  max-width: 150px;
+  text-size-adjust: auto;
+  text-overflow: ellipsis;
+  padding: 0 16px 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,23 @@
+.articles-list {
+  width: 100%;
+  padding: 64px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 400px);
+  grid-gap: 16px 16px;
+  justify-content: center;
+}
+
+@media all and (max-width: 949px) {
+  .articles-list {
+    padding: 32px 0;
+    grid-template-columns: repeat(auto-fill, 224px);
+    grid-gap: 8px 8px;
+  }
+}
+
+@media all and (max-width: 508px) {
+  .articles-list {
+    padding: 24px 0 15px;
+    grid-template-columns: repeat(auto-fill, 288px);
+  }
+}

@@ -1,0 +1,10 @@
+.saved-news_title {
+  max-width: 530px;
+  margin: 28px 0 30px;
+}
+
+@media all and (max-width: 949px) {
+  .saved-news_title {
+    margin: 16px 0 16px;
+  }
+}

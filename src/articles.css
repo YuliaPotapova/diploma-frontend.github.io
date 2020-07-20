@@ -1,0 +1,40 @@
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts.css);
+@import url(./blocks/page/page.css);
+@import url(./blocks/title/title.css);
+@import url(./blocks/button/button.css);
+@import url(./blocks/button/_theme-blue/button_theme-blue.css);
+@import url(./blocks/button/_theme-clear/button_theme-clear.css);
+@import url(./blocks/button/_not-active/button_not-active.css);
+@import url(./blocks/header/header.css);
+@import url(./blocks/logo/logo.css);
+@import url(./blocks/footer/footer.css);
+@import url(./blocks/popup/popup.css);
+
+@import url(./blocks/header/_item-is-active-dark/header_item-is-active-dark.css);
+@import url(./blocks/button/_theme-dark/button_theme-dark.css);
+@import url(./blocks/saved-news/saved-news.css);
+@import url(./blocks/saved-news/__content/saved-news__content.css);
+@import url(./blocks/saved-news/__subtitle/saved-news__subtitle.css);
+@import url(./blocks/saved-news/__subtitle/_mobile/saved-news__subtitle_mobile.css);
+@import url(./blocks/saved-news/_title/saved-news_title.css);
+@import url(./blocks/saved-news-cards/saved-news-cards.css);
+@import url(./blocks/saved-news-cards/__content/saved-news-cards__content.css);
+@import url(./blocks/articles-list/articles-list.css);
+@import url(./blocks/article/article.css);
+@import url(./blocks/article/__category/article__category.css);
+@import url(./blocks/article/__trash-icon/article__trash-icon.css);
+@import url(./blocks/header-mobile/header-mobile.css);
+@import url(./blocks/menu-popup/menu-popup.css);
+@import url(./blocks/header/_light/header_light.css);
+@import url(./blocks/header/_view/header_view.css);
+@import url(./blocks/header-mobile/_view/header-mobile_view.css);
+@import url(./blocks/header/__button-log-out-text/header__button-log-out-text.css);
+@import url(./blocks/header/_dark/header_dark.css);
+@import url(./blocks/menu-popup/_button-log-out/menu-popup_button-log-out.css);
+@import url(./blocks/is-closed/is-closed.css);
+@import url(./blocks/is-invisible/is-invisible.css);
+
+body {
+  background-color: #e5e5e5;
+}

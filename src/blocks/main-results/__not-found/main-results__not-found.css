@@ -1,0 +1,8 @@
+@import url(../__not-found-title/main-results__not-found-title.css);
+@import url(../__info-message/main-results__info-message.css);
+
+.main-results__not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

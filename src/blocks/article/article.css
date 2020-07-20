@@ -1,0 +1,29 @@
+@import url(./__image/article__image.css);
+@import url(./__date/article__date.css);
+@import url(./__title/article__title.css);
+@import url(./__text/article__text.css);
+@import url(./__source/article__source.css);
+
+.article {
+  text-decoration-line: none;
+  background-color: white;
+  border-radius: 16px;
+  height: 576px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  cursor: pointer;
+}
+
+@media all and (max-width: 949px) {
+  .article {
+    height: 420px;
+  }
+}
+
+@media all and (max-width: 508px) {
+  .article {
+    height: 440px;
+  }
+}

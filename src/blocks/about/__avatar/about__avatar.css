@@ -1,0 +1,19 @@
+.about__avatar {
+  box-sizing: border-box;
+  border-radius: 50%;
+  width: 37.7%;
+}
+
+@media all and (max-width: 768px) {
+  .about__avatar {
+    width: 33.7%;
+    margin: 10px 0;
+  }
+}
+
+@media all and (max-width: 508px) {
+  .about__avatar {
+    width: 94.4%;
+    margin: 0 0 24px;
+  }
+}

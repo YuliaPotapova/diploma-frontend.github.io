@@ -1,0 +1,31 @@
+.article__bookmark-icon-marked {
+  background: url(../../../images/bookmark-icon_marked.svg) center no-repeat;
+  background-color: transparent;
+  border: none;
+  outline-width: 0;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+  display: block;
+}
+
+.article__bookmark-icon-marked:hover {
+  opacity: .7;
+}
+
+@media all and (max-width: 949px) {
+  .article__bookmark-icon-marked {
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media all and (max-width: 508px) {
+  .article__bookmark-icon-marked {
+    top: 16px;
+    right: 16px;
+  }
+}
