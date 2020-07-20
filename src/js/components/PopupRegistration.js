@@ -31,6 +31,7 @@ export default class PopupRegistration extends Popup {
   }
 
   async submit(popupSuccess) {
+    this.submitted = true;
     if (this._validateForm()) {
       const email = this.emailInputEl.value;
       const password = this.passwordInputEl.value;

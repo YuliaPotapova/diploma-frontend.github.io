@@ -33,12 +33,13 @@ export default class Popup {
   }
 
   open() {
+    this.submitted = false;
     if (this.formEl) {
       this.formEl.reset();
       this._validateForm();
       setIsInvisible([this.apiErrorEl]);
-      setIsClosed([this.headerMobileMenuIconEl]);
     }
+    setIsClosed([this.headerMobileMenuIconEl]);
     removeIsClosed([this.popupEl]);
   }
 
@@ -68,8 +69,10 @@ export default class Popup {
     }
 
     if (err) {
-      errEl.textContent = err;
-      removeIsInvisible([errEl]);
+      if (this.submitted) {
+        errEl.textContent = err;
+        removeIsInvisible([errEl]);
+      }
       return false;
     }
     setIsInvisible([errEl]);

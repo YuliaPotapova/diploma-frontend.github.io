@@ -27,9 +27,3 @@
   justify-content: center;
   display: flex;
 }
-
-@media all and (max-width: 508px) {
-  .popup {
-    background-color: transparent;
-  }
-}

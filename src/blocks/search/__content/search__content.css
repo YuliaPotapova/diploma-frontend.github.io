@@ -6,7 +6,7 @@
   align-items: flex-start;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 890px) {
   .search__content {
     width: 58.3%;
   }
