@@ -39,7 +39,7 @@ export default class NewsCardList {
       setIsClosed([this.resultLoadingEl, this.resultErrEl]);
       removeIsClosed([this.resultContentEl]);
     } else {
-      this.resultInfoEl.textContent = 'К сожалению, по вашему запросу<br>ничего не найдено.';
+      this.resultInfoEl.innerHTML = 'К сожалению, по вашему запросу<br>ничего не найдено.';
       setIsClosed([this.resultContentEl, this.resultLoadingEl]);
       removeIsClosed([this.resultErrEl]);
     }
