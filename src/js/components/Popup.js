@@ -1,7 +1,9 @@
-import { setIsInvisible, removeIsInvisible, setIsClosed, removeIsClosed } from "../utils/utils";
+import {
+  setIsInvisible, removeIsInvisible, setIsClosed, removeIsClosed,
+} from '../utils/utils';
 
-// =================================== Класс для всплывающего окна ===========================================
-export class Popup {
+// ================================ Класс для всплывающего окна ====================================
+export default class Popup {
   constructor(
     validator,
     popupEl, formEl,
@@ -11,7 +13,7 @@ export class Popup {
     passwordInputEl, passwordErrorEl,
     apiErrorEl,
     linkEl,
-    headerMobileMenuIconEl
+    headerMobileMenuIconEl,
   ) {
     this.validator = validator;
     this.popupEl = popupEl;
@@ -52,8 +54,8 @@ export class Popup {
   _validateInputElement(inputEl) {
     if (!this.validator || !inputEl) return true;
 
-    let err = undefined;
-    let errEl = undefined;
+    let err;
+    let errEl;
     if (inputEl === this.nameInputEl) {
       err = this.validator.checkName(inputEl);
       errEl = this.nameErrorEl;
@@ -69,10 +71,9 @@ export class Popup {
       errEl.textContent = err;
       removeIsInvisible([errEl]);
       return false;
-    } else {
-      setIsInvisible([errEl]);
-      return true;
     }
+    setIsInvisible([errEl]);
+    return true;
   }
 
   _validateForm() {
@@ -83,11 +84,10 @@ export class Popup {
       setIsClosed([this.submitEnabledBtnEl]);
       removeIsClosed([this.submitDisabledBtnEl]);
       return false;
-    } else {
-      setIsClosed([this.submitDisabledBtnEl]);
-      removeIsClosed([this.submitEnabledBtnEl]);
-      return true;
     }
+    setIsClosed([this.submitDisabledBtnEl]);
+    removeIsClosed([this.submitEnabledBtnEl]);
+    return true;
   }
 
   setEventListeners(submitObj, popupToOpen) {

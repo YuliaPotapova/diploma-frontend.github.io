@@ -1,8 +1,8 @@
-import {Popup} from './Popup.js';
-import { removeIsInvisible } from "../utils/utils.js";
+import Popup from './Popup';
+import { removeIsInvisible } from '../utils/utils';
 
-// =========================== Расширенный класс для всплывающего окна #popup-registration ============================
-export class PopupRegistration extends Popup {
+// ================== Расширенный класс для всплывающего окна #popup-registration ==================
+export default class PopupRegistration extends Popup {
   constructor(
     validator,
     popupEl, formEl,
@@ -10,7 +10,7 @@ export class PopupRegistration extends Popup {
     emailErrorEl, passwordErrorEl, nameErrorEl,
     apiErrorEl,
     linkToEntryEl,
-    headerMobileMenuIconEl
+    headerMobileMenuIconEl,
   ) {
     super(
       validator,
@@ -21,7 +21,7 @@ export class PopupRegistration extends Popup {
       formEl.elements.registration_password, passwordErrorEl,
       apiErrorEl,
       linkToEntryEl,
-      headerMobileMenuIconEl
+      headerMobileMenuIconEl,
     );
   }
 
@@ -35,19 +35,15 @@ export class PopupRegistration extends Popup {
       const email = this.emailInputEl.value;
       const password = this.passwordInputEl.value;
       const name = this.nameInputEl.value;
-      // renderLoading(this.form.elements.submit, 'Зарегистрироваться', '···', true);
       this.mainApi.signup(email, password, name)
-      .then(() => {
-        this.close();
-        popupSuccess.open();
-      })
-      .catch(err => {
-        this.apiErrorEl.textContent = err.message;
-        removeIsInvisible([this.apiErrorEl]);
-        // console.log(err.message);
-      });
-      // await this.sleep(2000);
-      // renderLoading(this.form.elements.submit, 'Зарегистрироваться', '···', false);
+        .then(() => {
+          this.close();
+          popupSuccess.open();
+        })
+        .catch((err) => {
+          this.apiErrorEl.textContent = err.message;
+          removeIsInvisible([this.apiErrorEl]);
+        });
     }
   }
 }

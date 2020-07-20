@@ -1,8 +1,7 @@
-import {setIsClosed, removeIsClosed} from '../utils/utils.js';
-import { Card } from './Card.js';
+import { setIsClosed, removeIsClosed } from '../utils/utils';
 
-// =================================== Класс для шапки сайта =========================================
-export class Header {
+// ================================= Класс для шапки сайта ========================================
+export default class Header {
   constructor(
     savedArticlesElArr,
     buttonAuthElArr,
@@ -10,7 +9,7 @@ export class Header {
     userNamesElArr,
     mobileMenuIconEl,
     menuPopupEl,
-    menuPopupCloseIconEl
+    menuPopupCloseIconEl,
   ) {
     this.savedArticlesElArr = savedArticlesElArr;
     this.buttonAuthElArr = buttonAuthElArr;
@@ -19,28 +18,25 @@ export class Header {
     this.mobileMenuIconEl = mobileMenuIconEl;
     this.menuPopupEl = menuPopupEl;
     this.menuPopupCloseIconEl = menuPopupCloseIconEl;
-
-    this.loggedIn = false;
-    this.userName = "";
   }
 
   _init(mainApi, popupEntry, cardList) {
     this.mainApi = mainApi;
     this.cardList = cardList;
 
-    this.buttonAuthElArr.forEach(el => {
+    this.buttonAuthElArr.forEach((el) => {
       el.addEventListener('click', () => {
         setIsClosed([this.menuPopupEl, this.mobileMenuIconEl]);
         popupEntry.open();
       });
     });
-    this.buttonLogOutElArr.forEach(el => {
+    this.buttonLogOutElArr.forEach((el) => {
       el.addEventListener('click', () => this.logout());
     });
     this.mobileMenuIconEl.addEventListener('click', () => removeIsClosed([this.menuPopupEl]));
     this.menuPopupCloseIconEl.addEventListener('click', () => setIsClosed([this.menuPopupEl]));
 
-    this.render({isLoggedIn: false});
+    this.render({ isLoggedIn: false, userName: '' });
   }
 
   isLoggedIn() {
@@ -53,7 +49,8 @@ export class Header {
 
   render(props) {
     if (props.isLoggedIn) {
-      this.userNamesArr.forEach(el => {
+      this.userNamesArr.forEach((el) => {
+        // eslint-disable-next-line no-param-reassign
         el.textContent = props.userName;
       });
       removeIsClosed(this.savedArticlesElArr);
@@ -70,26 +67,25 @@ export class Header {
 
   update() {
     this.mainApi.getUserData()
-    .then(res => {
-      this.render({
-        isLoggedIn: res.isLoggedIn,
-        userName: res.userName,
+      .then((res) => {
+        this.render({
+          isLoggedIn: res.isLoggedIn,
+          userName: res.userName,
+        });
+        this.cardList.updateCards();
+      })
+      .catch((err) => {
+        console.log('Ошибка в getUserData:', err.message);
       });
-      this.cardList.updateCards();
-    })
-    .catch(err => {
-      console.log("Ошибка в getUserData:", err.message)
-    });
   }
 
   logout() {
     this.mainApi.signout()
-    .then(res => {
-      if (res)
-        this.update();
-    })
-    .catch(err => {
-      console.log("Ошибка в logout:", err.message);
-    })
+      .then((res) => {
+        if (res) this.update();
+      })
+      .catch((err) => {
+        console.log('Ошибка в logout:', err.message);
+      });
   }
 }

@@ -1,6 +1,6 @@
-// ================================== Класс для блока поиска новостей ================================
-export class Search {
-  constructor (validator, searchInputEl, searchBtnEl) {
+// ================================ Класс для блока поиска новостей ================================
+export default class Search {
+  constructor(validator, searchInputEl, searchBtnEl) {
     this.validator = validator;
     this.searchInputEl = searchInputEl;
     this.searchBtnEl = searchBtnEl;
@@ -21,10 +21,9 @@ export class Search {
     if (err) {
       this.searchInputEl.placeholder = err;
       return false;
-    } else {
-      this.searchInputEl.placeholder = "Введите тему новости";
-      return true;
     }
+    this.searchInputEl.placeholder = 'Введите тему новости';
+    return true;
   }
 
   async submit() {

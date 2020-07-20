@@ -1,10 +1,10 @@
-import { escapeHtml } from "../utils/utils";
+import { escapeHtml, formatCardDate } from '../utils/utils';
 
-// ====================================== Класс блока результатов ====================================
-export class Card {
-  constructor (
+// ===================================== Класс блока результатов ===================================
+export default class Card {
+  constructor(
     data,
-    mainApi, header, cardList
+    mainApi, header, cardList,
   ) {
     this.mainApi = mainApi;
     this.header = header;
@@ -18,19 +18,18 @@ export class Card {
 
   // Создаёт элемент карточки и возвращает его
   createElement() {
-    const d = this.data
+    const d = this.data;
     const keywordElement = this.saved ? `<span class="article__category">${escapeHtml(d.keyword)}</span>` : '';
-    const template =
-            `<div class="article">
-              <div class="article__image" style="background-image: url(${d.urlToImage})">
-                <button class="article__trash-icon"></button>
-              </div>
-              ${keywordElement}
-              <span class="article__date">${this._formatDate(new Date(d.publishedAt))}</span>
-              <h3 class="article__title">${escapeHtml(d.title)}</h3>
-              <p class="article__text">${escapeHtml(d.description)}</p>
-              <span class="article__source">${escapeHtml(d.source.name)}</span>
-            </div>`
+    const template = `<div class="article">
+                        <div class="article__image" style="background-image: url(${d.urlToImage})">
+                          <button class="article__trash-icon"></button>
+                        </div>
+                        ${keywordElement}
+                        <span class="article__date">${formatCardDate(new Date(d.publishedAt))}</span>
+                        <h3 class="article__title">${escapeHtml(d.title)}</h3>
+                        <p class="article__text">${escapeHtml(d.description)}</p>
+                        <span class="article__source">${escapeHtml(d.source.name)}</span>
+                      </div>`;
 
     const cardElement = document.createElement('div');
     cardElement.insertAdjacentHTML('beforeend', template);
@@ -50,18 +49,18 @@ export class Card {
     if (this.saved || !this.cardElement) return;
     if (this.header.isLoggedIn()) {
       if (this.id) {
-        this.iconEl.classList = "article__bookmark-icon-marked";
+        this.iconEl.classList = 'article__bookmark-icon-marked';
       } else {
-        this.iconEl.classList = "article__bookmark-icon-black";
+        this.iconEl.classList = 'article__bookmark-icon-black';
       }
     } else {
-      this.iconEl.classList = "article__bookmark-icon";
+      this.iconEl.classList = 'article__bookmark-icon';
     }
   }
 
-  removeEventListeners () {
+  removeEventListeners() {
     if (!this.cardElement) return;
-    this.cardElement.removeEventListener('click', (e) => { window.open(this.data.url, this.data.title); });
+    this.cardElement.removeEventListener('click', () => { window.open(this.data.url, this.data.title); });
     this.cardElement.querySelector('button').removeEventListener('click', this._saveOrDeleteCard.bind(this));
   }
 
@@ -69,34 +68,30 @@ export class Card {
     if (!this.header.isLoggedIn()) return;
     if (this.id) {
       this.mainApi.removeArticle(this.id)
-      .then(res => {
-        this.id = undefined;
-        if (this.saved)
-          this.cardList.removeCard(this);
-        else
-          this.updateIcon();
-      })
-      .catch(err => {
-        console.log("Ошибка в removeArticle:", err);
-      })
+        .then(() => {
+          this.id = undefined;
+          if (this.saved) {
+            this.cardList.removeCard(this);
+          } else {
+            this.updateIcon();
+          }
+        })
+        .catch((err) => {
+          console.log('Ошибка в removeArticle:', err);
+        });
     } else {
       this.mainApi.createArticle(
         this.data.keyword, this.data.title, this.data.description,
         this.data.publishedAt, this.data.source.name, this.data.url,
-        this.data.urlToImage)
-      .then(res => {
-        this.id = res._id;
-        this.updateIcon();
-      })
-      .catch(err => {
-        console.log("Ошибка в createArticle:", err);
-      });
+        this.data.urlToImage,
+      )
+        .then((res) => {
+          this.id = res._id;
+          this.updateIcon();
+        })
+        .catch((err) => {
+          console.log('Ошибка в createArticle:', err);
+        });
     }
-  }
-
-  _formatDate(date) {
-    const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа',
-      'сентября', 'октября', 'ноября', 'декабря'];
-    return date.getDate() + ' ' + months[date.getMonth()] + ', ' + date.getFullYear();
   }
 }

@@ -1,13 +1,13 @@
-import { setIsClosed, removeIsClosed } from "../utils/utils.js";
-import { Card } from "./Card.js";
+import { setIsClosed, removeIsClosed } from '../utils/utils';
+import Card from './Card';
 
-// ====================================== Класс блока результатов ====================================
-export class NewsCardList {
-  constructor (
+// =================================== Класс блока результатов ====================================
+export default class NewsCardList {
+  constructor(
     mainResultsEl,
     resultContentEl, articlesListEl, showMoreBtnEl,
     resultLoadingEl,
-    resultErrEl, resultInfoEl
+    resultErrEl, resultInfoEl,
   ) {
     this.mainResultsEl = mainResultsEl;
     this.resultContentEl = resultContentEl;
@@ -32,22 +32,22 @@ export class NewsCardList {
     this._clearCards();
 
     this.cardsShown = 0;
-    this.cards = cardsData.map(el => new Card(el, this.mainApi, this.header, null));
+    this.cards = cardsData.map((el) => new Card(el, this.mainApi, this.header, null));
     this.showMoreCards();
 
     if (this.cards.length > 0) {
       setIsClosed([this.resultLoadingEl, this.resultErrEl]);
       removeIsClosed([this.resultContentEl]);
     } else {
-      this.resultInfoEl.textContent = "К сожалению, по вашему запросу<br>ничего не найдено.";
+      this.resultInfoEl.textContent = 'К сожалению, по вашему запросу<br>ничего не найдено.';
       setIsClosed([this.resultContentEl, this.resultLoadingEl]);
       removeIsClosed([this.resultErrEl]);
     }
     removeIsClosed([this.mainResultsEl]);
   }
 
-  renderError(err) {
-     if (err) this.resultInfoEl.textContent = 'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз'
+  renderError() {
+    this.resultInfoEl.innerHTML = 'Во время запроса произошла ошибка.<br>Возможно, проблема с соединением или сервер недоступен.<br>Подождите немного и попробуйте ещё раз';
     setIsClosed([this.resultContentEl, this.resultLoadingEl]);
     removeIsClosed([this.mainResultsEl, this.resultErrEl]);
   }
@@ -58,7 +58,7 @@ export class NewsCardList {
   }
 
   showMoreCards() {
-    for (let i = 0; i<3 && this.cardsShown<this.cards.length; i++) {
+    for (let i = 0; i < 3 && this.cardsShown < this.cards.length; i += 1) {
       const card = this.cards[this.cardsShown];
       this.articlesListEl.appendChild(card.createElement());
       this.cardsShown += 1;
@@ -71,8 +71,9 @@ export class NewsCardList {
   }
 
   _clearCards() {
-    while (this.articlesListEl.firstChild)
+    while (this.articlesListEl.firstChild) {
       this.articlesListEl.removeChild(this.articlesListEl.firstChild);
+    }
     this.cards.forEach((card) => card.removeEventListeners());
     this.cards = [];
   }

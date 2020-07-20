@@ -1,17 +1,17 @@
-import { MainApi } from './js/api/MainApi.js';
-import { Header } from './js/components/Header.js';
-import { PopupSuccess } from './js/components/PopupSuccess.js';
-import { PopupEntry } from './js/components/PopupEntry.js';
-import { PopupRegistration } from './js/components/PopupRegistration.js';
-import { Validator } from './js/components/Validator.js';
-import { mainConfig, newsConfig } from './js/config.js';
-import { NewsApi } from './js/api/NewsApi.js';
-import { Search } from './js/components/Search.js';
-import { NewsCardList } from './js/components/NewsCardList.js';
+import { mainConfig, newsConfig } from './js/config';
+
+import MainApi from './js/api/MainApi';
+import Header from './js/components/Header';
+import PopupSuccess from './js/components/PopupSuccess';
+import PopupEntry from './js/components/PopupEntry';
+import PopupRegistration from './js/components/PopupRegistration';
+import Validator from './js/components/Validator';
+import NewsApi from './js/api/NewsApi';
+import Search from './js/components/Search';
+import NewsCardList from './js/components/NewsCardList';
 
 import './vendor/normalize.css';
 import './index.css';
-
 
 /* Постоянные - элементы разметки */
 
@@ -60,43 +60,46 @@ const resultInfoEl = resultErrEl.querySelector('.main-results__info-message');
 const showMoreBtnEl = resultContentEl.querySelector('.main-results_button');
 const articlesListEl = resultContentEl.querySelector('.articles-list');
 
-
 /* Создание экземпляров классов */
 
 const validator = new Validator();
 
 const mainApi = new MainApi(mainConfig);
-const newsApi  = new NewsApi(newsConfig);
+const newsApi = new NewsApi(newsConfig);
 
 const header = new Header(
   [headerArticlesEl, headerMobileArticlesEl],
   [headerButtonAuthEl, headerMobileButtonAuthEl],
   [headerButtonLogOutEl, headerMobileButtonLogOutEl],
   [headerButtonLogOutTextEl, headerMobileButtonLogOutTextEl],
-  headerMobileMenuIconEl, menuPopupEl, menuPopupCloseIconEl);
+  headerMobileMenuIconEl, menuPopupEl, menuPopupCloseIconEl,
+);
 
 const popupSuccess = new PopupSuccess(
-  popupSuccessEl, popupSuccessCloseEl, successLinkToEntryEl, headerMobileMenuIconEl);
+  popupSuccessEl, popupSuccessCloseEl, successLinkToEntryEl, headerMobileMenuIconEl,
+);
 
 const popupEntry = new PopupEntry(
   validator, popupEntryEl, document.forms.entry,
   popupEntryCloseEl, popupEntrySubmitEnabledBtnEl, popupEntrySubmitDisabledBtnEl,
   popupEntryEmailErrorEl, popupEntryPasswordErrorEl, popupEntryApiErrorEl,
-  popupLinkToRegistrationEl, headerMobileMenuIconEl);
+  popupLinkToRegistrationEl, headerMobileMenuIconEl,
+);
 
 const popupRegistration = new PopupRegistration(
   validator, popupRegistrationEl, document.forms.registration,
   popupRegistrationCloseEl, popupRegistrationSubmitEnabledBtnEl,
   popupRegistrationSubmitDisabledBtnEl, popupRegistrationEmailErrorEl,
   popupRegistrationPasswordErrorEl, popupRegistrationNameErrorEl,
-  popupRegistrationApiErrorEl, popupLinkToEntryEl, headerMobileMenuIconEl);
+  popupRegistrationApiErrorEl, popupLinkToEntryEl, headerMobileMenuIconEl,
+);
 
 const newsCardList = new NewsCardList(
   mainResultsEl, resultContentEl, articlesListEl, showMoreBtnEl, resultLoadingEl,
-  resultErrEl, resultInfoEl);
+  resultErrEl, resultInfoEl,
+);
 
 const search = new Search(validator, searchInputEl, searchBtnEl);
-
 
 /* Инициализация */
 
@@ -106,7 +109,6 @@ popupRegistration._init(mainApi, popupSuccess, popupEntry);
 popupSuccess._init(popupEntry);
 newsCardList._init(mainApi, header);
 search._init(newsApi, newsCardList);
-
 
 /* Запуск */
 

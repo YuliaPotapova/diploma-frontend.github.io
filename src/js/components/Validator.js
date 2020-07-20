@@ -1,6 +1,6 @@
-// ==================================== Класс для валидации формы ============================================
-export class Validator {
-  constructor(errors) {
+// ================================ Класс для валидации формы ======================================
+export default class Validator {
+  constructor() {
     this.errors = {
       mandatoryField: 'Это обязательное поле',
       nameLength: 'Должно быть от 2 до 30 символов',
@@ -18,7 +18,7 @@ export class Validator {
 
   checkEmail(inputEl) {
     if (inputEl.value.length === 0) return this.errors.mandatoryField;
-    let regex = /^([A-Za-z0-9]+[-_\.])*[A-Za-z0-9]+@([A-Za-z0-9]+[-_\.])*[A-Za-z0-9]+\.[A-Za-z]{2,}$/;
+    const regex = /^([A-Za-z0-9]+[-_.])*[A-Za-z0-9]+@([A-Za-z0-9]+[-_.])*[A-Za-z0-9]+\.[A-Za-z]{2,}$/;
     if (!regex.test(inputEl.value)) return this.errors.mustBeEmail;
     return undefined;
   }

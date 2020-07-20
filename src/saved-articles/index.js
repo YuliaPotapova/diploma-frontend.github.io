@@ -1,11 +1,10 @@
-import { MainApi } from '../js/api/MainApi.js';
-import { Header } from '../js/components/Header.js';
-import { mainConfig } from '../js/config.js';
-import { SavedCardList } from '../js/components/SavedCardList';
+import { mainConfig } from '../js/config';
+import MainApi from '../js/api/MainApi';
+import Header from '../js/components/Header';
+import SavedCardList from '../js/components/SavedCardList';
 
 import '../vendor/normalize.css';
 import '../articles.css';
-
 
 /* Постоянные - элементы разметки */
 
@@ -27,7 +26,6 @@ const savedCardsEl = document.querySelector('.saved-news-cards');
 const savedCardsContentEl = document.querySelector('.saved-news-cards__content');
 const articlesListEl = savedCardsContentEl.querySelector('.articles-list');
 
-
 /* Создание экземпляров классов */
 
 const mainApi = new MainApi(mainConfig);
@@ -37,18 +35,18 @@ const header = new Header(
   [],
   [headerButtonLogOutEl, headerMobileButtonLogOutEl],
   [headerButtonLogOutTextEl, headerMobileButtonLogOutTextEl],
-  headerMobileMenuIconEl, menuPopupEl, menuPopupCloseIconEl);
+  headerMobileMenuIconEl, menuPopupEl, menuPopupCloseIconEl,
+);
 
 const savedCardList = new SavedCardList(
   savedNewsTitle, savedNewsKeywords,
-  savedCardsEl, savedCardsContentEl, articlesListEl);
-
+  savedCardsEl, savedCardsContentEl, articlesListEl,
+);
 
 /* Инициализация */
 
 header._init(mainApi, undefined, savedCardList);
 savedCardList._init(mainApi, header);
-
 
 /* Запуск */
 

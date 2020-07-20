@@ -1,15 +1,16 @@
-import {Popup} from './Popup.js';
+import Popup from './Popup';
 
-export class PopupSuccess extends Popup {
+export default class PopupSuccess extends Popup {
   constructor(
     popupSuccessEl, popupSuccessCloseEl,
     successLinkToEntryEl,
-    headerMobileMenuIconEl
+    headerMobileMenuIconEl,
   ) {
     super(
       undefined, popupSuccessEl, undefined, popupSuccessCloseEl,
-      undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined,
-      successLinkToEntryEl, headerMobileMenuIconEl
+      undefined, undefined, undefined, undefined, undefined,
+      undefined, undefined, undefined, undefined,
+      successLinkToEntryEl, headerMobileMenuIconEl,
     );
   }
 
